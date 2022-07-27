@@ -67,7 +67,7 @@ pylint = "^2.14.5"
 black = { version = "^22.6", allow-prereleases = true }
 darglint = "^1.8.1"
 isort = { extras = ["colors"], version = "^5.10.1" }
-mypy = "^0.910"
+mypy = "^0.971"
 mypy-extensions = "^0.4.3"
 
 
