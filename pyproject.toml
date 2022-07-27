@@ -34,7 +34,7 @@ classifiers = [#! Update me
 [tool.poetry.dependencies]
 python = "^3.10"
 
-typer = { extras = ["all"], version = "^0.4.0" }
+typer = { extras = ["all"], version = "^0.6.1" }
 rich = "^12.5.1"
 openpyxl = "^3.0.10"
 pydantic = "^1.9.1"
@@ -64,10 +64,10 @@ coverage-badge = "^1.1.0"
 pytest-html = "^3.1.1"
 safety = "^2.1.1"
 pylint = "^2.14.5"
-black = { version = "^21.10b0", allow-prereleases = true }
+black = { version = "^22.6.0", allow-prereleases = true }
 darglint = "^1.8.1"
 isort = { extras = ["colors"], version = "^5.10.1" }
-mypy = "^0.910"
+mypy = "^0.971"
 mypy-extensions = "^0.4.3"
 
 
