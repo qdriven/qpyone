@@ -34,7 +34,7 @@ classifiers = [#! Update me
 [tool.poetry.dependencies]
 python = "^3.10"
 
-typer = { extras = ["all"], version = "^0.4.0" }
+typer = { extras = ["all"], version = "^0.6.1" }
 rich = "^12.5.1"
 openpyxl = "^3.0.10"
 pydantic = "^1.9.1"
