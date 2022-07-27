@@ -7,7 +7,7 @@ You currently can find the usage documentation in [README file](https://github.c
 
 """
 
-from .config import XlsxConfig
-from .fields import XlsxField, XlsxFieldInfo
+from .config import FXlsxConfig
+from .fields import FXlsxField, FXlsxFieldInfo
 from .model import XlsxModel
 

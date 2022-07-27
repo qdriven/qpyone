@@ -9,7 +9,7 @@ from openpyxl import load_workbook, Workbook
 from pydantic import BaseModel
 
 from .composition import CompositionFactory
-from .config import XlsxConfig
+from .config import FXlsxConfig
 
 
 class XlsxModel(BaseModel):
@@ -19,7 +19,7 @@ class XlsxModel(BaseModel):
     parameter.
     """
 
-    Config = XlsxConfig
+    Config = FXlsxConfig
 
     def __init__(self, **data: Any):
         super().__init__(**data)

@@ -11,7 +11,7 @@ from pydantic.fields import FieldInfo, Undefined
 from .types import Money
 
 
-class XlsxFieldInfo(FieldInfo):
+class FXlsxFieldInfo(FieldInfo):
     """
     Extends pydantic's Field class for some extra functionality (e.g. cell
     formatting).
@@ -28,7 +28,7 @@ class XlsxFieldInfo(FieldInfo):
         self.number_format = kwargs.pop("number_format", None)
 
 
-def XlsxField(
+def FXlsxField(
     default: Any = Undefined,
     *,
     font: Optional[Font] = None,
@@ -39,7 +39,7 @@ def XlsxField(
     A field for extra formatting etc. The styles defined by a field will be
     applied to the whole column.
     """
-    field_info = XlsxFieldInfo(
+    field_info = FXlsxFieldInfo(
         default,
         font=font,
         number_format=number_format,
@@ -63,14 +63,14 @@ class FieldTypeInfo(Generic[T], metaclass=ABCMeta):
         self.field_type = field_type
 
     @abstractmethod
-    def field_info(self) -> XlsxFieldInfo:
+    def field_info(self) -> FXlsxFieldInfo:
         """Returns `XlsxFieldInfo` based on the Field type."""
         pass
 
 
 class MoneyFieldInfo(FieldTypeInfo[Money]):
-    def field_info(self) -> XlsxFieldInfo:
-        return XlsxFieldInfo(number_format=self.field_type.number_format())
+    def field_info(self) -> FXlsxFieldInfo:
+        return FXlsxFieldInfo(number_format=self.field_type.number_format())
 
 
 class FieldTypeInfoFactory:
@@ -91,7 +91,7 @@ class FieldTypeInfoFactory:
     def field_info_from_type(
             cls,
             field_type: Type[T]
-    ) -> Optional[XlsxFieldInfo]:
+    ) -> Optional[FXlsxFieldInfo]:
         """
         Same as `from_field_type` but directly calls `FieldTypeInfo.field_info`
         (if available) and returns the result.

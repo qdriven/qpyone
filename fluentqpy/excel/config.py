@@ -9,7 +9,7 @@ from openpyxl import utils as pyxl_utils
 from pydantic import BaseConfig
 
 
-class XlsxConfig(BaseConfig):
+class FXlsxConfig(BaseConfig):
     """
     Extends pydantic's config class with some Excel specific stuff.
     """
@@ -80,9 +80,9 @@ class XlsxConfig(BaseConfig):
     def _print_title_columns(cls) -> Optional[str]:
         if cls.freeze_cell is None:
             return None
-        freeze_column =\
+        freeze_column = \
             pyxl_utils.cell.coordinate_from_string(cls.freeze_cell)[0]
-        max_column_num =\
+        max_column_num = \
             pyxl_utils.cell.column_index_from_string(freeze_column) - 1
         if max_column_num == 0:
             return None
@@ -95,7 +95,7 @@ class XlsxConfig(BaseConfig):
             return cls.print_title_rows
         if cls.freeze_cell is None:
             return None
-        freeze_row =\
+        freeze_row = \
             pyxl_utils.cell.coordinate_from_string(cls.freeze_cell)[1] - 1
         if freeze_row == 0:
             return None

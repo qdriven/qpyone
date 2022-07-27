@@ -27,7 +27,7 @@ from openpyxl.worksheet.worksheet import Worksheet
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.table import Table
 
-from .config import XlsxConfig
+from .config import FXlsxConfig
 from .fields import FieldTypeInfoFactory
 
 if TYPE_CHECKING:
@@ -46,13 +46,13 @@ class Composition(metaclass=ABCMeta):
 
     data: List["XlsxModel"]
     title: str
-    config: XlsxConfig
+    config: FXlsxConfig
 
     def __init__(
         self,
         data: List["XlsxModel"],
         title: str,
-        config: XlsxConfig
+        config: FXlsxConfig
     ):
         if len(data) < 1:
             raise ValueError("cannot create the {} sheet, at least one entry \
