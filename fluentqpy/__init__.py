@@ -3,6 +3,8 @@
 
 import sys
 
+from fluentqpy.config import fDynaconf
+
 if sys.version_info >= (3, 8):
     from importlib import metadata as importlib_metadata
 else:
@@ -17,3 +19,4 @@ def get_version() -> str:
 
 
 version: str = get_version()
+
