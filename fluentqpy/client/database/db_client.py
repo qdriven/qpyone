@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlmodel import SQLModel, Session
 
 from fluentqpy.client.database.models import DbConfig
@@ -24,3 +24,15 @@ class DbClient:
         with Session(self.engine) as s:
             s.add(instance)
             s.commit()
+
+    def query(self, plain_sql: str, **kwargs):
+        s = text(plain_sql)
+        with self.engine.connect() as conn:
+            result = conn.execute(s, **kwargs)
+        return result
+
+    def query_by_sqlmodel(self, plain_sql: str, **kwargs):
+        with Session(self.engine) as session:
+            st = text(plain_sql)
+            result = session.execute(st, **kwargs)
+        return result

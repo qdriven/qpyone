@@ -38,3 +38,26 @@ def test_create_engine():
     # session.commit()
     # session.close()
     pg.save(h1)
+
+
+def test_query():
+    sql="""
+    SELECT t.*
+                 FROM unit.unit t
+                 LIMIT 10
+    """
+    db_config = DbConfig(
+        url="postgresql://postgres:changeit@localhost:7432/test_hub"
+    )
+    pg = DbClient(config=db_config)
+    result = pg.query_by_sqlmodel(sql)
+    print(result)
+    all_list = []
+    for row in result:
+        result_dict = {}
+        for key in result.keys():
+            result_dict[key] = str(row[key])
+
+        all_list.append(result_dict)
+
+    print(all_list)
