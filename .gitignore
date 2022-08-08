@@ -7,7 +7,7 @@ backup/*
 .DS_Store
 .AppleDouble
 .LSOverride
-
+poetry.lock
 # Icon must end with two \r
 Icon
 dist/
