@@ -1,7 +1,6 @@
 """Tests for hello function."""
-import pytest
 
-from fluentqpy.excel import XlsxModel, FXlsxField
+from fluentqpy.misc.excel import XlsxModel, FXlsxField
 
 
 class UnitExcelModel(XlsxModel):

@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 from sqlalchemy import MetaData
 
-from fluentqpy.client.database.db_client import DbClient
-from fluentqpy.client.database.models import DbConfig
+from fluentqpy.clients.database.db_client import DbClient
+from fluentqpy.clients.database.models import DbConfig
 
 # postgresql: postgresql: // scott: tiger @ localhost:5432 / mydatabase
 # jdbc:postgresql://localhost:5432/mydatabase?currentSchema=myschema

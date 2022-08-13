@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-from spell.clients.http.errors import HttpRequestError
+from fluentqpy.clients.http.errors import HttpRequestError
 
 
 def test_http_request_error():

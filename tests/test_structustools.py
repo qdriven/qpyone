@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-from spell.utilities.misc import pick_by_keys, pick_values, pick_value
-from spell.utilities.web import replace_path_params, normalize_url
+
+from fluentqpy.builtins.structstools import *
+from fluentqpy.misc.fweb import *
 
 
 def test_pick_by_keys():

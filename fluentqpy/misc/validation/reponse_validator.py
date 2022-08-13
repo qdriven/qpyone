@@ -2,10 +2,9 @@
 # -*- coding:utf-8 -*-
 from typing import Dict
 
-from spell.clients.http.models import HttpLog
-from spell.utilities.extractor import get_value
-from spell.validation.assertions import assert_that, soft_assertions
-from spell.validation.models import ExpectedResponse
+from fluentqpy.clients.http.models import HttpLog
+from .assertions import assert_that, soft_assertions
+from .models import ExpectedResponse
 
 
 class ResponseValidation:

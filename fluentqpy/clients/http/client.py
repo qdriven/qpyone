@@ -8,10 +8,8 @@ from typing import Optional, Dict, Union, Any, List, Type
 import httpx
 from httpx import Response
 
-from spell.clients.http.errors import HttpRequestError
-from spell.clients.http.models import HttpLog, HttpRequest, HttpResponse
-from spell.clients.http.typing import SyncAsync
-from spell.utilities.clogger import make_console_logger
+from .errors import HttpRequestError
+from .models import HttpRequest, SyncAsync, HttpLog, HttpResponse
 
 
 @dataclasses.dataclass
@@ -20,6 +18,7 @@ class HttpClientOption:
     timeout_ms = 50_000
     headers: Optional[Dict] = None
     additional: Optional[Dict] = None
+    http2: bool =False
 
 
 class BaseHttpClient:
@@ -35,7 +34,6 @@ class BaseHttpClient:
         self._clients: List[Union[httpx.Client, httpx.AsyncClient]] = []
         self.client = client
         self._default_headers = self._make_default_client_header(options)
-        self.logger = make_console_logger()
 
     @staticmethod
     def _make_default_client_header(options: Optional[Union[Dict[str, Any], HttpClientOption]]) -> httpx.Headers:
@@ -130,7 +128,7 @@ class HttpClient(BaseHttpClient):
 
 
 class AsyncHttpClient(BaseHttpClient):
-    """Asynchronous client for Notion's API."""
+    """Asynchronous clients for Notion's API."""
 
     client: httpx.AsyncClient
 

@@ -4,7 +4,7 @@
 
 from dynaconf import Dynaconf
 
-settings = Dynaconf(
+fsettings = Dynaconf(
     envvar_prefix="qpy",
     settings_files=["settings.toml", ".secrets.toml"],
     environments=True,
@@ -14,8 +14,7 @@ settings = Dynaconf(
     includes=["../config/more_settings.toml"],
 )
 
-settings.validators.validate()
+fsettings.validators.validate()
 
 
-def get_all_settings():
-    return dir(settings)
+

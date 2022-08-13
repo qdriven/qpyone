@@ -2,9 +2,9 @@
 # -*- coding:utf-8 -*-
 from typing import Any
 
-from spell.clients.http.typing import SyncAsync
-from spell.clients.service import BaseRpcService
-from spell.utilities.misc import pick_by_keys
+from fluentqpy.clients.http.models import SyncAsync
+from fluentqpy.core.service import BaseRpcService
+from fluentqpy.builtins.structstools import pick_by_keys
 
 
 class BlocksChildrenEndpoint(BaseRpcService):
@@ -27,7 +27,7 @@ class BlocksChildrenEndpoint(BaseRpcService):
         *[🔗 Endpoint documentation](https://developers.notion.com/reference/get-block-children)*
         """  # noqa: E501
         return self.invoker.request(
-            
+
             path=f"blocks/{block_id}/children",
             method="GET",
             query=pick_by_keys(kwargs, "start_cursor", "page_size"),

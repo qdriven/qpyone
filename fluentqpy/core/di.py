@@ -4,7 +4,7 @@
 # -*- coding:utf-8 -*-
 from typing import Dict, Any
 
-from spell.clients.http.client import BaseHttpClient, HttpClient, HttpClientOption
+from fluentqpy.clients.http.client import BaseHttpClient, HttpClient, HttpClientOption
 
 
 class HttpSdk:

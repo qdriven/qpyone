@@ -1,16 +1,14 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
 import functools
 from typing import Union, Any, Dict
 
 from pydantic import BaseModel
 
-from spell.clients.http.client import BaseHttpClient
-from spell.clients.http.models import HttpRequest, HttpLog
-from spell.utilities.misc import pick_value
+from fluentqpy.clients.http.client import BaseHttpClient
+from fluentqpy.clients.http.models import HttpRequest, HttpLog
+from fluentqpy.builtins.structstools import pick_value
 
 
 class BaseRpcService:

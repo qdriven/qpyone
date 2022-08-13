@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-from sdks.notion.notion import notion_sdk, async_notion_sdk
-from spell.config import settings
+from fsdk.notion.notion import notion_sdk, async_notion_sdk
+from fluentqpy.config import settings
 
 
 class TestNotionSdk:

@@ -1,23 +1,24 @@
 #!/usr/bin/env python
-# -*- coding:utf-8 -*-
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
+
 import enum
-from typing import Optional, Dict, Any, Union
+from typing import Optional, Dict, Any,Awaitable, TypeVar, Union
 
 from httpx import Response
 from pydantic import BaseModel
 
-from spell.clients import ClientModel
-from spell.utilities.web import replace_path_params, normalize_url
 
+from fluentqpy.misc import fweb
 
-from typing import Awaitable, TypeVar, Union
 T = TypeVar("T")
 SyncAsync = Union[T, Awaitable[T]]
-
 ROOT_PATH = "/"
 
+class ClientModel(BaseModel):
+    """
+    Base Model to separate dep
+    """
+    class Config:
+        arbitrary_types_allowed =True
 
 class HttpMethod(enum.Enum):
     POST = "POST"
@@ -46,7 +47,8 @@ class HttpRequest(HttpApiModel):
 
     def get_full_path(self, base_url=None):
         used_base_url = base_url if base_url else self.base_url
-        self.req_url = normalize_url(used_base_url, replace_path_params(self.path, path_params=self.path_params))
+        self.req_url = fweb.normalize_url(used_base_url,
+                                          fweb.replace_path_params(self.path, path_params=self.path_params))
         return self.req_url
 
 
@@ -64,7 +66,6 @@ class HttpResponse(ClientModel):
             status_code=resp.status_code,
             headers=resp.headers
         )
-
 
 class HttpLog(ClientModel):
     request: HttpRequest = None

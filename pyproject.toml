@@ -42,6 +42,9 @@ dynaconf = "^3.1.9"
 sqlmodel = "^0.0.6"
 psycopg = "^3.0.16"
 psycopg2-binary = "^2.9.3"
+httpx = "^0.23.0"
+loguru = "^0.6.0"
+Faker = "^14.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"

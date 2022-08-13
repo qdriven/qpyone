@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 import asyncio
 
-from sdks.httpbin.api.httpmethod import HttpMethodService
-from spell.clients.http.client import HttpClient, AsyncHttpClient
+from fsdk.httpbin.api.httpmethod import HttpMethodService
+from fluentqpy.clients.http.client import HttpClient, AsyncHttpClient
 
 
 class TestHttpBinSdk:

@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import asyncio
 
-from spell.clients.http.client import HttpClient, AsyncHttpClient
+from fluentqpy.clients.http.client import HttpClient, AsyncHttpClient
 from tests.clients.demo.httpmethod import HttpMethodTestService
 from tests.clients.demo.httpmethod_partial import PHttpMethodTestService
 

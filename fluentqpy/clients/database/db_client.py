@@ -3,7 +3,7 @@
 from sqlalchemy import create_engine, text
 from sqlmodel import SQLModel, Session
 
-from fluentqpy.client.database.models import DbConfig
+from fluentqpy.clients.database.models import DbConfig
 
 
 class DbClient:

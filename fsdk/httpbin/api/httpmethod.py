@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from spell.clients.http.models import HttpRequest, HttpMethod
-from spell.clients.service import BaseRpcService
+from fluentqpy.clients.http.models import HttpRequest, HttpMethod
+from fluentqpy.core.service import BaseRpcService
 
 
 class HttpMethodService(BaseRpcService):

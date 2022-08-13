@@ -343,6 +343,7 @@ from importlib.abc import InspectLoader
 from types import ModuleType
 from typing import Any, Dict, Iterable, List, Optional, TextIO, Union, cast
 
+
 try:
     import yaml
 except ImportError:  # pragma: no cover
@@ -1109,3 +1110,11 @@ if toml is not None:  # pragma: no branch
             interpolate=interpolate,
             interpolate_type=interpolate_type,
         )
+
+
+from .fDynaconf import fsettings
+
+settings = fsettings
+
+def get_all_settings():
+    return dir(fsettings)
