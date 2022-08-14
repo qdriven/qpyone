@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 from fluentqpy.clients.http.client import BaseHttpClient
 from fluentqpy.clients.http.models import HttpRequest, HttpLog
-from fluentqpy.builtins.structstools import pick_value
+from fluentqpy.builtins.dicttools import pick_value
 
 
 class BaseRpcService:
