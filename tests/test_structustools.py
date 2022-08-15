@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from fluentqpy.builtins.dicttools import *
-from fluentqpy.misc.fweb import *
+from fluentqpy.misc.qweb import *
 
 
 def test_pick_by_keys():

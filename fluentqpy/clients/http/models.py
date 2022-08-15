@@ -7,7 +7,7 @@ from httpx import Response
 from pydantic import BaseModel
 
 
-from fluentqpy.misc import fweb
+from fluentqpy.misc import qweb
 
 T = TypeVar("T")
 SyncAsync = Union[T, Awaitable[T]]
