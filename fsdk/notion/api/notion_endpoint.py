@@ -4,7 +4,7 @@ from typing import Any
 
 from fluentqpy.clients.http.models import SyncAsync
 from fluentqpy.core.service import BaseRpcService
-from fluentqpy.builtins.dicttools import pick_by_keys
+from fluentqpy.builtins.dicts.dicttools import pick_by_keys
 
 
 class BlocksChildrenEndpoint(BaseRpcService):

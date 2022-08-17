@@ -52,8 +52,7 @@ more_dict={
   }
 }
 
-
-from fluentqpy.builtins import dicttools as dt
+from fluentqpy.builtins.dicts import dicttools as dt
 from fluentqpy.builtins import jsontools as jt
 def test_dict_json():
 

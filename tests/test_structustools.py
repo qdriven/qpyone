@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from fluentqpy.builtins.dicttools import *
+from fluentqpy.builtins.dicts.dicttools import *
 from fluentqpy.misc.qweb import *
 
 
