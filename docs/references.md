@@ -10,7 +10,7 @@
 
 
 ## sdk client
-- [bubble-client]()
+- [bubble-client](https://github.com/Refty/bubble-client.git)
 
 ## Toolkits:
 - https://github.com/HansBug/argsloader.git
@@ -36,8 +36,17 @@
 - https://github.com/zillionare/cookiecutter-pypackage.git
 - https://github.com/fpgmaas/cookiecutter-poetry.git
 
+## Toturial
+
+- https://github.com/ArjanCodes/2022-docker.git
 
 ## One Lib:
 
 - https://github.com/cdgriffith/Box.git
 - https://github.com/astanin/python-tabulate
+- https://github.com/j0fiN/pcmd.git
+
+
+## Clients
+
+-  https://github.com/Refty/bubble-client.git
