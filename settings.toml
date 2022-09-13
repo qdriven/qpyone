@@ -1,0 +1,4 @@
+[default]
+log_level='INFO'
+db= 'test_db'
+structure.test="http://localhost:7077"

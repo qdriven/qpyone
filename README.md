@@ -1,6 +1,5 @@
 # qqyone: Python All-in-One lib for Software QA
 
-
 <p align="center">
 <a href="https://github.com/qdriven/qpyone/actions"><img alt="Actions Status" src="https://github.com/qdriven/qpyone/workflows/build/badge.svg"></a>
 <a href="https://github.com/qdriven/qpyone/blob/main/LICENSE"><img alt="License: MIT" src="https://black.readthedocs.io/en/stable/_static/license.svg"></a>
@@ -12,3 +11,10 @@
 
 ***qpyone*** stands, one python lib for QA.
 This lib integrates most useful libs for QA Daily tasks.
+
+## To Do
+
+- [] DI Implementation
+- [] plugin pattern
+- [] workflow/pipeline pattern
+- [] more enhanced 
