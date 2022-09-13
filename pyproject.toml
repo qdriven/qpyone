@@ -4,17 +4,18 @@ requires = ["poetry_core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "fluentqpy"
+name = "qpyone"
 version = "0.1.0"
-description = " fluentqpy, a daily qa pytoolkits "
+description = " qpyone, a daily qa pytoolkits "
 readme = "README.md"
-authors = ["fluentqa-pyutils <hello@fluentqa-pyutils.com>"]
+authors = ["fluentqa-pyutils <hello@fluentqa.xyz>"]
 license = "MIT"
-repository = "https://github.com/fluentqa_pyutils/fluentqa-pyutils"
-homepage = "https://github.com/fluentqa_pyutils/fluentqa-pyutils"
+repository = "https://github.com/fluentqa/qpyone"
+homepage = "https://github.com/fluentqa/qpyone"
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
-keywords = []  #! Update me
+keywords = ["QA Python Lib", "Testing", "Software QA Python Libs",
+  "Living Tutorials For QA"]  #! Update me
 
 # Pypi classifiers: https://pypi.org/classifiers/
 classifiers = [#! Update me
@@ -27,59 +28,19 @@ classifiers = [#! Update me
   "Programming Language :: Python :: 3.10",
 ]
 
-#[tool.poetry.scripts]
-## Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-#"fluentqa-pyutils" = "fluentqa_pyutils.__main__:app"
-
 [tool.poetry.dependencies]
 python = "^3.10"
 
-typer = { extras = ["all"], version = "^0.6.1" }
-rich = "^12.5.1"
-openpyxl = "^3.0.10"
-pydantic = "^1.9.1"
-dynaconf = "^3.1.9"
-sqlmodel = "^0.0.8"
-psycopg = "^3.0.16"
-psycopg2-binary = "^2.9.3"
-httpx = "^0.23.0"
-loguru = "^0.6.0"
-Faker = "^14.0.0"
-deep-translator = "^1.8.3"
-"github3.py" = "^3.2.0"
-gql = "^3.4.0"
-aiohttp = "^3.8.1"
-
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
-tox = "^3.25.0"
-pytest-cov = "^3.0.0"
-pytest-mock = "^3.7.0"
-pytest-sugar = "^0.9.4"
-deepdiff = "^5.8.0"
 pre-commit = "^2.18.1"
-httpretty = "^1.1.4"
-typing-extensions = "^4.2.0"
-zipp = "^3.8.0"
-flatdict = "^4.0.1"
-mkdocs-material = "^8.2.12"
-mkdocs = "^1.3.0"
-mkdocs-material-extensions = "^1.0.3"
-pymdown-extensions = "^9.4"
-Pygments = "^2.12.0"
-mkdocs-minify-plugin = "^0.5.0"
 pyupgrade = "^2.37.3"
 bandit = "^1.7.4"
-coverage = "^6.4.3"
-coverage-badge = "^1.1.0"
-pytest-html = "^3.1.1"
 safety = "^2.1.1"
 pylint = "^2.14.5"
 black = { version = "^22.6.0", allow-prereleases = true }
 darglint = "^1.8.1"
 isort = { extras = ["colors"], version = "^5.10.1" }
-mypy = "^0.971"
-mypy-extensions = "^0.4.3"
 
 
 [tool.black]
@@ -87,7 +48,6 @@ mypy-extensions = "^0.4.3"
 target-version = ["py310"]
 line-length = 88
 color = true
-
 exclude = '''
 /(
     \.git
@@ -125,7 +85,6 @@ extend_skip = ["setup.py"]
 
 [tool.mypy]
 # https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
-python_version = 3.10
 pretty = true
 show_traceback = true
 color_output = true

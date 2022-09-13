@@ -4,9 +4,8 @@ PYTHON := python
 PYTHONPATH := `pwd`
 
 #* Docker variables
-IMAGE := fluentqa_pyutils
+IMAGE := qpyone
 VERSION := latest
-
 #* Poetry
 .PHONY: poetry-download
 poetry-download:
@@ -57,7 +56,7 @@ mypy:
 check-safety:
 	poetry check
 	poetry run safety check --full-report
-	poetry run bandit -ll --recursive fluentqa_pyutils tests
+	poetry run bandit -ll --recursive qpyone tests
 
 .PHONY: lint
 lint: test check-codestyle mypy check-safety
