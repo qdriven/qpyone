@@ -1,7 +1,6 @@
 # qqyone: Python All-in-One lib for Software QA
 
-![build status](https://github.com/qdriven/qpyone/actions/workflows/build.yml/badge.svg?event=push)
-![release status](https://github.com/qdriven/qpyone/actions/workflows/release-draft.yml/badge.svg?event=push)
+[![Build status](https://github.com/qdriven/qpyone/workflows/build/badge.svg?branch=main&event=push)](https://github.com/qdriven/qpyone/actions?query=workflow%3Abuild)
 ![coverage](./assets/images/coverage.svg)
 
 ***qpyone*** stands, one python lib for QA.
