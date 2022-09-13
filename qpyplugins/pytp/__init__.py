@@ -1,4 +1,0 @@
-
-"""
-pytp: pytest plugins
-"""

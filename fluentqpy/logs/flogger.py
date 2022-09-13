@@ -1,5 +1,3 @@
-
-
 import logging
 import sys
 import types
@@ -75,7 +73,8 @@ class LoguruRichHandler(RichHandler):
             log_time_display = time_format(log_time)
         else:
             log_time_display = Text(log_time.strftime(time_format))
-        if not (log_time_display == self._log_render._last_time and self._log_render.omit_repeated_times):
+        if not (
+            log_time_display == self._log_render._last_time and self._log_render.omit_repeated_times):
             self.console.print(log_time_display, style="log.time")
             self._log_render._last_time = log_time_display
 
@@ -97,10 +96,12 @@ class LoguruRichHandler(RichHandler):
         return super().render_message(record, message)
 
 
-ExceptionHook = Callable[[Type[BaseException], BaseException, Optional[TracebackType]], Any]
+ExceptionHook = Callable[
+    [Type[BaseException], BaseException, Optional[TracebackType]], Any]
 
 
-def _loguru_exc_hook(typ: Type[BaseException], val: BaseException, tb: Optional[TracebackType]):
+def _loguru_exc_hook(typ: Type[BaseException], val: BaseException,
+                     tb: Optional[TracebackType]):
     logger.opt(exception=(typ, val, tb)).error("Exception:")
 
 
@@ -122,7 +123,7 @@ def install(
             {
                 "sink": LoguruRichHandler(
                     console=rich_console
-                    or Console(
+                            or Console(
                         theme=Theme(
                             {
                                 "logging.level.success": "green",
@@ -146,5 +147,3 @@ def install(
     )
     if exc_hook is not None:
         sys.excepthook = exc_hook
-
-

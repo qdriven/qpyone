@@ -83,6 +83,6 @@ def pascal_case(string):
     return camel_case(string).capitalize()
 
 
-## todo: use funtools partial func to re-org functions
-case_function_map = {
-}
+# ## todo: use funtools partial func to re-org functions
+# case_function_map = {
+# }
