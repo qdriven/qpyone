@@ -59,7 +59,8 @@ check-safety:
 	poetry run bandit -ll --recursive qpyone tests
 
 .PHONY: lint
-lint: formatting test check-codestyle check-safety
+#lint: formatting test check-codestyle check-safety
+lint: formatting test check-codestyle
 
 .PHONY: update-dev-deps
 update-dev-deps:
