@@ -2,7 +2,7 @@
 from pydantic import BaseModel
 
 
-class FBaseModel(BaseModel):
+class QBaseModel(BaseModel):
     """
     Base Model Based on pydantic
     """

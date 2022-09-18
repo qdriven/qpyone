@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-from typing import Optional
 
-from qpyone.builtins.models import FBaseModel
+from qpyone.core.models import QBaseModel
 
 
-class DbConfig(FBaseModel):
+class DbConfig(QBaseModel):
     url: str | None = None
     pool_size: int | None = None

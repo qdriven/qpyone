@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 from typing import Any
-from typing import List
 
 
-def flat(nested_list: list[list[Any]]):
+def flat(nested_list: list[list[Any]]) -> list:
     result = []
     for list_item in nested_list:
         for item in list_item:

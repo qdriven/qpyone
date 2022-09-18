@@ -3,17 +3,16 @@ combine jmespath,jsonpath and dictor
 - https://github.com/jmespath/jmespath.py
 """
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Union
 
 import json
 
 from pydantic import BaseModel
 
 
-def get(key: str) -> Any | None:
+def get(target_object: Any, key: str) -> Any | None:
+    """
+    get value json/dict/class object
+    """
     pass
 
 

@@ -1,5 +1,4 @@
 from typing import Any
-from typing import List
 
 
 def copy_files(file_path):

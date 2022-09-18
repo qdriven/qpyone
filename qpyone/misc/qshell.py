@@ -3,6 +3,13 @@ import subprocess
 import time
 
 
+"""
+Most Shell Command could be replaced by:
+1. shutil
+2. Path
+"""
+
+
 class ShellResult:
     def __init__(self, return_code, stdout, stderr):
         self.return_code = return_code

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import functools
 import re
 
 from enum import Enum
