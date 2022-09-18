@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-from typing import Dict
-
-from fluentqpy.clients.http.models import HttpLog
+from qpyone.clients.http.models import HttpLog
 
 from .assertions import assert_that
 from .assertions import soft_assertions
