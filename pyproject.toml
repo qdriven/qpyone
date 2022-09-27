@@ -55,7 +55,7 @@ isort = { extras = ["colors"], version = "^5.10.1" }
 coverage = "^6.4.4"
 coverage-badge = "^1.1.0"
 pytest-cov = "^3.0.0"
-mypy = "^0.971"
+mypy = "^0.981"
 
 [tool.black]
 # https://github.com/psf/black
