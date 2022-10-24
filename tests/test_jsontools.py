@@ -1,3 +1,9 @@
+from typing import Optional
+
+import datetime
+
+from pydantic import BaseModel
+from pydantic import Field
 from qpyone.builtins import jsontools as jt
 
 from tests import TEST_BASE_PATH
@@ -27,3 +33,44 @@ def test_loads_list():
     """
     result = jt.loads(json_str)
     assert isinstance(result, list)
+
+
+class BaseDataModel(BaseModel):
+    class Config:
+        arbitrary_types_allowed = True
+        allow_population_by_field_name = True
+        use_enum_values = True
+
+    def to_json(self):
+        return self.json(by_alias=True, exclude_none=True)
+
+    def to_dict(self):
+        return self.dict(by_alias=True, exclude_none=True)
+
+
+from datetime import date
+from datetime import datetime
+from datetime import time
+from datetime import timedelta
+
+
+class DataTransformRule(BaseDataModel):
+    id: str | None = Field(None, alias="id")
+    name: str | None = Field(None, alias="name")
+    start_time: datetime | None = Field(None, alias="startTime")
+    end_time: datetime | None = Field(None, alias="endTime")
+
+
+def test_model():
+    result = DataTransformRule(
+        id="test", name="test", start_time=datetime.now().astimezone()
+    )
+    # "2032-04-23T10:20:30.400+02:30"
+    print(datetime.now().astimezone())
+    print(result.to_json())
+    json_str = """
+    {"id": "test", "name": "test", "startTime": "2022-10-24 16:04:47.657599+08:00"}
+    """
+    result_1 = DataTransformRule.parse_raw(result.to_json())
+    print(result_1.to_json())
+    print(result_1.start_time.astimezone())
