@@ -5,10 +5,9 @@ render by jinja2 template engine
 import json
 
 from jinja2 import Template
-
-from .qdate import get_date_by_timedelta
-from .qrandom import faker
-from .qrandom import random_str
+from qpyone.builtins.datetools import get_date_by_timedelta
+from qpyone.builtins.randomtools import faker
+from qpyone.builtins.randomtools import random_str
 
 
 render_func = {

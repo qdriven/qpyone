@@ -33,3 +33,5 @@
 # Out[*]:
 # (4, u'The Hobbit', u'Tolkien')
 # (5, u'The Silmarillion', u'Tolkien')
+from qpyone.clients.database import models as db_meta
+from qpyone.clients.database import utils as db_utils
