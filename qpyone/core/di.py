@@ -1,12 +1,8 @@
 #!/usr/bin/env python
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
 from typing import Any
-from typing import Dict
 
-from fluentqpy.clients.http.client import BaseHttpClient
-from fluentqpy.clients.http.client import HttpClient
-from fluentqpy.clients.http.client import HttpClientOption
+from qpyone.clients.http.client import BaseHttpClient
+from qpyone.clients.http.client import HttpClientOption
 
 
 class HttpSdk:

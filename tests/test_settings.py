@@ -1,4 +1,4 @@
-from qpyone.config import settings
+from draft import settings
 
 
 def test_configuration_loaded():
