@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 from typing import Any
-from typing import Dict
-from typing import Optional
 from typing import TypeVar
 from typing import Union
 
@@ -12,6 +10,7 @@ from collections.abc import Awaitable
 
 from httpx import Response
 from pydantic import BaseModel
+from qpyone.builtins import webtools
 
 
 T = TypeVar("T")
@@ -55,9 +54,9 @@ class HttpRequest(HttpApiModel):
 
     def get_full_path(self, base_url=None):
         used_base_url = base_url if base_url else self.base_url
-        self.req_url = fweb.normalize_url(
+        self.req_url = webtools.normalize_url(
             used_base_url,
-            fweb.replace_path_params(self.path, path_params=self.path_params),
+            webtools.replace_path_params(self.path, path_params=self.path_params),
         )
         return self.req_url
 
