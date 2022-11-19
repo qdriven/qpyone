@@ -10,9 +10,7 @@ from qpyone.clients.database.db_client import DbClient
 from qpyone.clients.database.models import DbConfig
 from qpyone.clients.database.utils import sql_result_to_model
 from sqlmodel import Field
-from sqlmodel import Session
 from sqlmodel import SQLModel
-from sqlmodel import create_engine
 from sqlmodel import select
 
 

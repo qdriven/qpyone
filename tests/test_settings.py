@@ -1,7 +1,7 @@
-from draft import settings
+from qpyone.config import configs
 
 
 def test_configuration_loaded():
-    assert settings.log_level == "INFO"
-    assert settings.db == "test_db"
-    settings.structure.test = "http://localhost:7077"
+    assert configs.log_level == "INFO"
+    assert configs.db == "test_db"
+    configs.structure.test = "http://localhost:7077"
