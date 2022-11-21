@@ -3,5 +3,3 @@
 """
 misc package is for different utilities in daily coding
 """
-
-import qexcel

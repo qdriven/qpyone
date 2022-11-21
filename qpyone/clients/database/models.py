@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from typing import List
 
 from qpyone.core.models import QBaseModel
 

@@ -1,4 +1,5 @@
 [default]
-log_level='INFO'
-db= 'test_db'
-structure.test="http://localhost:7077"
+log_level = 'INFO'
+db = {url="postgresql://postgres:changeit@localhost:7432/test_hub"}
+structure = { test = "http://localhost:7077" }
+mitm = { recorded_url = "https://matrix-api," }

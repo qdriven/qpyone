@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+
 # https://chartio.com/resources/tutorials/how-to-execute-raw-sql-in-sqlalchemy/
 # metadata = MetaData()
 # books = Table('book', metadata,

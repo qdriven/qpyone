@@ -1,7 +1,8 @@
 #!/usr/bin/env python
+from qpyone.clients import DbClient
+from qpyone.clients import DbConfig
 from qpyone.clients import database
-from qpyone.clients.database.db_client import DbClient
-from qpyone.clients.database.models import DbConfig
+from qpyone.clients.database import models
 from qpyone.misc import qrender
 
 
@@ -93,10 +94,8 @@ class {{table_name}}(SQLModel, table=True):
 def test_db_model():
     db_config = DbConfig(url="postgresql://postgres:changeit@localhost:7432/test_hub")
     pg = DbClient(config=db_config)
-    result = pg.query(query_field.format("stored_procedure_prac"))
-    model_result = database.db_utils.sql_result_to_model(
-        result, database.models.FieldMeta
-    )
+    result = pg.query(query_field.format("api_monitor_record"))
+    model_result = database.db_utils.sql_result_to_model(result, models.FieldMeta)
     print(model_result)
     for model in model_result:
         if model.field_name == "id":
@@ -105,9 +104,7 @@ def test_db_model():
         else:
             model.code_type = get_field_type(model.field_type)
             model.code_value = "None"
-    table_meta = database.models.TableMeta(
-        table_name="stored_procedure_prac", fields=model_result
-    )
+    table_meta = models.TableMeta(table_name="ApiMonitorRecord", fields=model_result)
     class_txt = qrender.render_template(TABLE_CLASS, table_meta.dict())
     print(class_txt)
 
