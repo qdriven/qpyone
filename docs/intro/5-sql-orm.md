@@ -1,4 +1,11 @@
 # SQL, ORM处理
+https://www.cosmicpython.com/book/part1.html
+https://www.toptal.com/python/top-10-mistakes-that-python-programmers-make
+https://adamj.eu/
+https://itecnote.com/tecnote/python-implementation-of-repository-pattern-in-python/
+https://red-bird.readthedocs.io/en/latest/
+https://techspot.zzzeek.org/2012/02/07/patterns-implemented-by-sqlalchemy/
+
 
 - 使用sqlalchemy/SQL model进行数据库操操作
 
