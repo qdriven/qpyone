@@ -2,20 +2,11 @@
 # postgresql: postgresql: // scott: tiger @ localhost:5432 / mydatabase
 # jdbc:postgresql://localhost:5432/mydatabase?currentSchema=myschema
 # pip install psycopg2-binary
-from typing import Any
-from typing import List
-from typing import Optional
-from typing import Type
-
-import pytest
-
-from pydantic import BaseModel
 from qpyone.clients.database.db_client import DbClient
 from qpyone.clients.database.models import DbConfig
 from qpyone.clients.database.utils import sql_result_to_model
 from sqlmodel import Field
 from sqlmodel import SQLModel
-from sqlmodel import select
 
 
 class Hero(SQLModel, table=True):
