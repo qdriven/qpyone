@@ -47,8 +47,8 @@ more_dict = {
     }
 }
 
+from qpyone.builtins import dicttools as dt
 from qpyone.builtins import jsontools as jt
-from qpyone.builtins.dicts import dicttools as dt
 
 
 def test_dict_json():
