@@ -55,7 +55,7 @@ pg = DbClient(config=db_config)
 
 ```python
 statement = select(Hero).where(Hero.name == "test3")
-    print(statement)
-    result = pg.query_by_statement(statement)
-    print(result)
+print(statement)
+result = pg.__query_by_statement(statement)
+print(result)
 ```

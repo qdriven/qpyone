@@ -26,7 +26,7 @@ def test_create_engine():
     r1 = pg.find_by(Hero, name=h1.name, age=h1.age)
     print(r1[0])
     r1[0].age = 20
-    pg.update(Hero, r1[0])
+    pg.update_by(Hero, r1[0])
     r2 = pg.find_by(Hero, name="test3")
     print(r2)
     pg.delete_by(Hero, name="test3")

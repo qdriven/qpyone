@@ -2,8 +2,6 @@
 Provides additional configuration capabilities for the `model.XlsxModel`.
 """
 
-from typing import Optional
-
 from openpyxl import utils as pyxl_utils
 from openpyxl.styles import Alignment
 from openpyxl.styles import Font

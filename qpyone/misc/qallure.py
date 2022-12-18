@@ -100,8 +100,4 @@ class AllureTestResult:
         self._test_case_result = value
 
     def to_tuple(self):
-        return (self._epic, self._feature, self._test_case, self._test_case_result)
-
-
-if __name__ == "__main__":
-    AllureReportConverter().generate_execl_report("test_result.xls")
+        return self._epic, self._feature, self._test_case, self._test_case_result

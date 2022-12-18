@@ -52,27 +52,27 @@ class DbClient:
             result = session.execute(st, **kwargs)
         return result.all()
 
-    def query_by_statement(self, statement):
+    def __query_by_statement(self, statement):
         with Session(self.engine) as session:
             return session.exec(statement).all()
 
-    def build_query(self, entity: SQLModel, **kwargs):
+    def _build_query(self, entity: SQLModel, **kwargs):
         return select(entity).filter_by(**kwargs)
 
-    def build_delete_statement(self, entity: SQLModel, **kwargs):
+    def _build_delete_statement(self, entity: SQLModel, **kwargs):
         return delete(entity).filter_by(**kwargs)
 
     def find_by(self, entity: type[SQLModel], **kwargs):
-        query = self.build_query(entity, **kwargs)
-        return self.query_by_statement(query)
+        query = self._build_query(entity, **kwargs)
+        return self.__query_by_statement(query)
 
     def delete_by(self, entity: type[SQLModel], **kwargs):
         with Session(self.engine) as session:
-            statement = self.build_delete_statement(entity, **kwargs)
+            statement = self._build_delete_statement(entity, **kwargs)
             session.exec(statement)
             session.commit()
 
-    def update(self, entity: type[SQLModel], instance: SQLModel):
+    def update_by(self, entity: type[SQLModel], instance: SQLModel):
         with Session(self.engine) as session:
             statement = (
                 update(entity).filter_by(id=instance.id).values(**instance.dict())

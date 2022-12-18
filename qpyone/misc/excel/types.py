@@ -3,8 +3,6 @@ This module contains additional data types which are important when working
 with Excel data sources like a primitive Money type.
 """
 
-from typing import Optional
-
 from abc import ABCMeta
 from abc import abstractmethod
 
