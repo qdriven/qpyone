@@ -10,7 +10,6 @@ Currently not used.
 """
 
 from typing import Generic
-from typing import Optional
 from typing import TypeVar
 
 from abc import ABCMeta

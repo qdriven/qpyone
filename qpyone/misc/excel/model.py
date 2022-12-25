@@ -3,10 +3,6 @@ Provides the `XlsxModel` to the library user.
 """
 
 from typing import Any
-from typing import List
-from typing import Optional
-from typing import Type
-from typing import Union
 
 from pathlib import Path
 

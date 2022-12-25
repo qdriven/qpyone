@@ -5,7 +5,7 @@ from qpyone.clients.http.client import BaseHttpClient
 from qpyone.clients.http.client import HttpClientOption
 
 
-class HttpSdk:
+class HttpServiceContainer:
     cls_dic: dict[type, Any]
     named_dic: dict[str, Any]
 
@@ -51,4 +51,4 @@ class HttpSdk:
         return self
 
 
-sdk = HttpSdk()
+sdk = HttpServiceContainer()

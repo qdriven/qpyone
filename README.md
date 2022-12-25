@@ -18,3 +18,7 @@ This lib integrates most useful libs for QA Daily tasks.
 - [] plugin pattern
 - [] workflow/pipeline pattern
 - [] more enhanced 
+
+## Integrations
+
+- [X][atlassian-python-api]( https://github.com/atlassian-api/atlassian-python-api.git)

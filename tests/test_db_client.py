@@ -2,16 +2,11 @@
 # postgresql: postgresql: // scott: tiger @ localhost:5432 / mydatabase
 # jdbc:postgresql://localhost:5432/mydatabase?currentSchema=myschema
 # pip install psycopg2-binary
-from typing import Optional
-
-import pytest
-
 from qpyone.clients.database.db_client import DbClient
 from qpyone.clients.database.models import DbConfig
 from qpyone.clients.database.utils import sql_result_to_model
 from sqlmodel import Field
 from sqlmodel import SQLModel
-from sqlmodel import select
 
 
 class Hero(SQLModel, table=True):
@@ -26,12 +21,15 @@ def test_create_engine():
     db_config = DbConfig(url="postgresql://postgres:changeit@localhost:7432/test_hub")
     pg = DbClient(config=db_config)
     h1 = Hero(name="test3", secret_name="scret_name", age=10)
+    ## save
     pg.save(h1)
-
-    statement = select(Hero).where(Hero.name == "test3")
-    print(statement)
-    result = pg.query_by_statement(statement)
-    print(result)
+    r1 = pg.find_by(Hero, name=h1.name, age=h1.age)
+    print(r1[0])
+    r1[0].age = 20
+    pg.update_by(Hero, r1[0])
+    r2 = pg.find_by(Hero, name="test3")
+    print(r2)
+    pg.delete_by(Hero, name="test3")
 
     # SQLModel.metadata.create_all(pg.engine)
     # metadata = MetaData(schema="test_hub_demo")

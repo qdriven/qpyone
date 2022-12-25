@@ -6,6 +6,9 @@ from sqlalchemy import create_engine
 from sqlalchemy import text
 from sqlmodel import Session
 from sqlmodel import SQLModel
+from sqlmodel import delete
+from sqlmodel import select
+from sqlmodel import update
 
 from .models import DbConfig
 from .utils import sql_result_to_model
@@ -28,6 +31,7 @@ class DbClient:
         with Session(self.engine) as s:
             s.add(instance)
             s.commit()
+            s.refresh(instance)
 
     def query(self, plain_sql: str, **kwargs):
         s = text(plain_sql)
@@ -48,6 +52,30 @@ class DbClient:
             result = session.execute(st, **kwargs)
         return result.all()
 
-    def query_by_statement(self, statement):
+    def __query_by_statement(self, statement):
         with Session(self.engine) as session:
-            return session.execute(statement).all()
+            return session.exec(statement).all()
+
+    def _build_query(self, entity: SQLModel, **kwargs):
+        return select(entity).filter_by(**kwargs)
+
+    def _build_delete_statement(self, entity: SQLModel, **kwargs):
+        return delete(entity).filter_by(**kwargs)
+
+    def find_by(self, entity: type[SQLModel], **kwargs):
+        query = self._build_query(entity, **kwargs)
+        return self.__query_by_statement(query)
+
+    def delete_by(self, entity: type[SQLModel], **kwargs):
+        with Session(self.engine) as session:
+            statement = self._build_delete_statement(entity, **kwargs)
+            session.exec(statement)
+            session.commit()
+
+    def update_by(self, entity: type[SQLModel], instance: SQLModel):
+        with Session(self.engine) as session:
+            statement = (
+                update(entity).filter_by(id=instance.id).values(**instance.dict())
+            )
+            session.exec(statement)
+            session.commit()

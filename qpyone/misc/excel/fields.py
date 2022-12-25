@@ -4,8 +4,6 @@ Extends pydantic's fields with some extra functionality.
 
 from typing import Any
 from typing import Generic
-from typing import Optional
-from typing import Type
 from typing import TypeVar
 
 from abc import ABCMeta

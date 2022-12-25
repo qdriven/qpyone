@@ -2,7 +2,7 @@
 from dynaconf import Dynaconf
 
 
-fsettings = Dynaconf(
+qconfigs = Dynaconf(
     envvar_prefix="qpy",
     settings_files=["settings.toml", ".secrets.toml", "settings-test.toml"],
     environments=True,
@@ -12,4 +12,4 @@ fsettings = Dynaconf(
     includes=["../config/more_settings.toml"],
 )
 
-fsettings.validators.validate()
+qconfigs.validators.validate()
