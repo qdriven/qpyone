@@ -58,7 +58,7 @@ coverage = "^7.0.0"
 coverage-badge = "^1.1.0"
 pytest-cov = "^4.0.0"
 mypy = "^0.982"
-omymodels = "^0.12.1"
+omymodels = "^0.13.0"
 mitmproxy = "^9.0.1"
 
 [tool.black]
