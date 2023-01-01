@@ -9,11 +9,6 @@ from pydantic import BaseModel
 from .excel import XlsxModel
 
 
-"""
-handle excel
-"""
-
-
 def read_as_objects(
     excel_path: str | Path,
     model: type[BaseModel] = BaseModel,

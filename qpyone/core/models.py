@@ -2,9 +2,15 @@
 from pydantic import BaseModel
 
 
-class QBaseModel(BaseModel):
-    """
-    Base Model Based on pydantic
-    """
+class BaseDataModel(BaseModel):
+    class Config:
+        arbitrary_types_allowed = True
+        # alias_generator = to_camel
+        allow_population_by_field_name = True
+        use_enum_values = True
 
-    pass
+    def to_json(self):
+        return self.json(by_alias=True, exclude_none=True)
+
+    def to_dict(self):
+        return self.dict(by_alias=True, exclude_none=True)

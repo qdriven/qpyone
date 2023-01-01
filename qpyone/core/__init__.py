@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 from loguru import logger
-from qpyone.core.qlogger import install
+from qpyone.core.logger_config import install
 
 
 install()
 
-flogger = logger
+loggers = logger

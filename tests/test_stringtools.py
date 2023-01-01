@@ -4,7 +4,7 @@ from qpyone.builtins.stringtools import CaseType
 
 
 def test_case_upper_or_lower():
-    t = stringtools.upper_or_lower("test", CaseType.UPPER)
+    t = stringtools.toggle_case("test", CaseType.UPPER)
     assert t == "TEST"
     print("capitalize".capitalize())
 

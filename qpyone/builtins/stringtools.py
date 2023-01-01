@@ -14,22 +14,27 @@ class CaseType(Enum):
     Pascal = "Pascal"
 
 
-def upper_or_lower(string, case_type: CaseType = CaseType.LOWER):
+def toggle_case(string, case_type: CaseType = CaseType.LOWER):
     if case_type == CaseType.UPPER:
         return str(string).upper()
     elif case_type == CaseType.LOWER:
         return str(string).lower()
 
 
-def camel_case(string):
-    string = re.sub(r"^[\-_\.]", "", str(string))
-    if not string:
-        return string
-    return upper_or_lower(string[0], CaseType.LOWER) + re.sub(
-        r"[\-_\.\s]([a-z])",
-        lambda matched: upper_or_lower(matched.group(1), CaseType.UPPER),
-        string[1:],
-    )
+def camel_case(string: str) -> str:
+    # string = re.sub(r"^[\-_\.]", "", str(string))
+    # if not string:
+    #     return string
+    # return upper_or_lower(string[0], CaseType.LOWER) + re.sub(
+    #     r"[\-_\.\s]([a-z])",
+    #     lambda matched: upper_or_lower(matched.group(1), CaseType.UPPER),
+    #     string[1:],
+    # )
+    return "".join(word.capitalize() for word in string.split("_"))
+
+
+# def to_camel(string: str) -> str:
+#     return "".join(word.capitalize() for word in string.split("_"))
 
 
 def snake_case(string):
@@ -47,9 +52,9 @@ def snake_case(string):
     string = re.sub(r"[\-\.\s]", "_", str(string))
     if not string:
         return string
-    return upper_or_lower(string[0], CaseType.UPPER) + re.sub(
+    return toggle_case(string[0], CaseType.UPPER) + re.sub(
         r"[A-Z]",
-        lambda matched: "_" + upper_or_lower(matched.group(0), CaseType.LOWER),
+        lambda matched: "_" + toggle_case(matched.group(0), CaseType.LOWER),
         string[1:],
     )
 
@@ -81,8 +86,3 @@ def pascal_case(string):
     """
 
     return camel_case(string).capitalize()
-
-
-# ## todo: use funtools partial func to re-org functions
-# case_function_map = {
-# }
