@@ -16,8 +16,3 @@ def proxy_on():
 def proxy_off():
     os.system('networksetup -setwebproxystate "Wi-Fi" off')
     os.system('networksetup -setsecurewebproxystate "Wi-Fi" off')
-
-
-if __name__ == "__main__":
-    # proxy_on()
-    proxy_off()
