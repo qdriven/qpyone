@@ -1,36 +1,41 @@
 #!/usr/bin/env python
+# -*- coding:utf-8 -*-
 from types import TracebackType
 from typing import Any
-
-import dataclasses
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Type
+from typing import Union
 
 from abc import abstractmethod
 
 import httpx
 
 from httpx import Response
+from qpyone.clients.http.errors import HttpRequestError
+from qpyone.clients.http.models import HttpLog
+from qpyone.clients.http.models import HttpRequest
+from qpyone.clients.http.models import HttpResponse
+from qpyone.clients.http.models import SyncAsync
+from qpyone.core import qpy_logger
+from qpyone.core.models import BaseDataModel
 
-from .errors import HttpRequestError
-from .models import HttpLog
-from .models import HttpRequest
-from .models import HttpResponse
-from .models import SyncAsync
 
-
-@dataclasses.dataclass
-class HttpClientOption:
-    auth: dict | None = None
+class HttpClientOption(BaseDataModel):
+    auth: Optional[Dict] = None
     timeout_ms = 50_000
-    headers: dict | None = None
-    additional: dict | None = None
-    http2: bool = False
+    headers: Optional[Dict] = None
+    additional: Optional[Dict] = None
+    ## Default to False
+    http2: Optional[bool] = False
 
 
 class BaseHttpClient:
     def __init__(
         self,
-        client: httpx.Client | httpx.AsyncClient,
-        options: dict[str, Any] | HttpClientOption | None = None,
+        client: Union[httpx.Client, httpx.AsyncClient],
+        options: Optional[Union[Dict[str, Any], HttpClientOption]] = None,
         **kwargs,
     ):
         if options is None:
@@ -38,13 +43,15 @@ class BaseHttpClient:
         elif isinstance(options, dict):
             options = HttpClientOption(**options)
         self.options = options
-        self._clients: list[httpx.Client | httpx.AsyncClient] = []
+        self._clients: List[Union[httpx.Client, httpx.AsyncClient]] = []
         self.client = client
         self._default_headers = self._make_default_client_header(options)
+        self.logger = qpy_logger
+        self._auth = {}
 
     @staticmethod
     def _make_default_client_header(
-        options: dict[str, Any] | HttpClientOption | None
+        options: Optional[Union[Dict[str, Any], HttpClientOption]]
     ) -> httpx.Headers:
         headers = httpx.Headers()
         if options:
@@ -54,12 +61,16 @@ class BaseHttpClient:
                 headers.update(options.headers)
         return headers
 
+    def auth(self, key, value):
+        self._auth[key] = value
+        return self
+
     @property
-    def client(self) -> httpx.Client | httpx.AsyncClient:
+    def client(self) -> Union[httpx.Client, httpx.AsyncClient]:
         return self._clients[-1]
 
     @client.setter
-    def client(self, client: httpx.Client | httpx.AsyncClient):
+    def client(self, client: Union[httpx.Client, httpx.AsyncClient]):
         client.timeout = httpx.Timeout(timeout=self.options.timeout_ms / 1_000)
         self._clients.append(client)
 
@@ -70,6 +81,7 @@ class BaseHttpClient:
             else:
                 raise ValueError("lack of api request parameters")
         send_header = self._default_headers.copy()
+        send_header.update(self._auth)
         if req.headers:
             send_header.update(req.headers)
         if req.auth:
@@ -81,7 +93,7 @@ class BaseHttpClient:
 
     def _build_request(self, req: HttpRequest):
         self.logger.info(f"{req.method} {req.req_url}")
-        self.logger.info(f"=> {req.query} -- {req.body}")
+        self.logger.info(f"request-body: {req.body}")
         return self.client.build_request(
             req.method,
             req.req_url,
@@ -91,7 +103,11 @@ class BaseHttpClient:
         )
 
     def _parse_http_log(self, req: HttpRequest, resp: Response) -> HttpLog:
-        return HttpLog(request=req, response=HttpResponse.from_raw_response(resp))
+        try:
+            return HttpLog(request=req, response=HttpResponse.from_raw_response(resp))
+        except Exception as e:
+            self.logger.error(e)
+            return HttpLog(request=req, response=HttpResponse(raw_response=resp))
 
     @abstractmethod
     def request(self, req: HttpRequest = None, **kwargs) -> SyncAsync[Any]:
@@ -105,12 +121,17 @@ class HttpClient(BaseHttpClient):
 
     def __init__(
         self,
-        options: dict[Any, Any] | HttpClientOption | None = None,
-        client: httpx.Client | None = None,
+        options: Optional[Union[Dict[Any, Any], HttpClientOption]] = None,
+        client: Optional[httpx.Client] = None,
         **kwargs: Any,
     ) -> None:
+        if options is None:
+            options = HttpClientOption()
         if client is None:
-            client = httpx.Client()
+            if options.http2:
+                client = httpx.Client(http2=options.http2, http1=False, verify=False)
+            else:
+                client = httpx.Client(verify=False)
         super().__init__(client, options, **kwargs)
 
     def __enter__(self) -> "HttpClient":
@@ -120,7 +141,7 @@ class HttpClient(BaseHttpClient):
 
     def __exit__(
         self,
-        exc_type: type[BaseException],
+        exc_type: Type[BaseException],
         exc_value: BaseException,
         traceback: TracebackType,
     ) -> None:
@@ -141,18 +162,25 @@ class HttpClient(BaseHttpClient):
 
 
 class AsyncHttpClient(BaseHttpClient):
-    """Asynchronous clients for Notion's API."""
+    """Asynchronous client for Notion's API."""
 
     client: httpx.AsyncClient
 
     def __init__(
         self,
-        options: dict[str, Any] | HttpClientOption | None = None,
-        client: httpx.AsyncClient | None = None,
+        options: Optional[Union[Dict[str, Any], HttpClientOption]] = None,
+        client: Optional[httpx.AsyncClient] = None,
         **kwargs: Any,
     ) -> None:
+        if options is None:
+            options = HttpClientOption()
         if client is None:
-            client = httpx.AsyncClient()
+            if options.http2:
+                client = httpx.AsyncClient(
+                    http2=options.http2, http1=False, verify=False
+                )
+            else:
+                client = httpx.AsyncClient(verify=False)
         super().__init__(client, options, **kwargs)
 
     async def __aenter__(self) -> "AsyncHttpClient":
@@ -162,7 +190,7 @@ class AsyncHttpClient(BaseHttpClient):
 
     async def __aexit__(
         self,
-        exc_type: type[BaseException],
+        exc_type: Type[BaseException],
         exc_value: BaseException,
         traceback: TracebackType,
     ) -> None:

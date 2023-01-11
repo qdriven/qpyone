@@ -1,5 +1,5 @@
-from qpyone.core import loggers
+from qpyone.core import qpy_logger
 
 
 def test_flogger():
-    loggers.log("test {}", "test_var")
+    qpy_logger.log("test {}", "test_var")

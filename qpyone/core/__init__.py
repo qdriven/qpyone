@@ -5,4 +5,4 @@ from qpyone.core.logger_config import install
 
 install()
 
-loggers = logger
+qpy_logger = logger

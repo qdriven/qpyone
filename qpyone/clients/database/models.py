@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 
-from qpyone.core.models import QBaseModel
+from qpyone.core.models import BaseDataModel
 
 
-class DbConfig(QBaseModel):
+class DbConfig(BaseDataModel):
     url: str | None = None
     pool_size: int | None = None
 
 
-class FieldMeta(QBaseModel):
+class FieldMeta(BaseDataModel):
     field_name: str
     field_type: str
     code_type: str = ""
     code_value: str = ""
 
 
-class TableMeta(QBaseModel):
+class TableMeta(BaseDataModel):
     table_name: str
     fields: list[FieldMeta]
