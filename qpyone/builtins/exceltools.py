@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 from typing import Any
+from typing import Dict
+from typing import List
+
+import inspect
 
 from pathlib import Path
 
+import pyexcel
+
 from openpyxl import load_workbook
 from pydantic import BaseModel
-
-from .excel import XlsxModel
 
 
 def read_as_objects(
@@ -35,5 +39,12 @@ def read_as_objects(
     return objects
 
 
-def to_excel(excel_path: str | Path, data: XlsxModel):
-    data.to_file(excel_path)
+def write_objects_to_excel(objects: list[BaseModel | dict | dict], excel_path: str):
+    if isinstance(objects[0], dict) or isinstance(objects[0], dict):
+        pyexcel.get_sheet(records=objects).save_as(excel_path)
+    elif isinstance(objects[0], BaseModel):
+        pyexcel.get_sheet(
+            records=[item.dict(by_alias=True) for item in objects]
+        ).save_as(excel_path)
+    else:
+        raise NotImplementedError("Not Support Model type")

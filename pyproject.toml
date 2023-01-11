@@ -42,6 +42,9 @@ psycopg2-binary = "^2.9.5"
 Faker = "^15.3.4"
 paramiko = "^2.12.0"
 atlassian-python-api = "^3.32.1"
+pyexcel = "^0.7.0"
+pyexcel-xlsx = "^0.6.0"
+pyexcel-xlsxw = "^0.6.1"
 
 
 [tool.poetry.dev-dependencies]

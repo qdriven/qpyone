@@ -9,8 +9,8 @@ class BaseDataModel(BaseModel):
         allow_population_by_field_name = True
         use_enum_values = True
 
-    def to_json(self):
-        return self.json(by_alias=True, exclude_none=True)
+    def to_json(self, by_alias=True):
+        return self.json(by_alias=by_alias, exclude_none=True)
 
-    def to_dict(self):
-        return self.dict(by_alias=True, exclude_none=True)
+    def to_dict(self, by_alias=True):
+        return self.dict(by_alias=by_alias, exclude_none=True)
