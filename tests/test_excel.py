@@ -22,3 +22,4 @@ def test_write_excels():
     u1 = UnitExcelModel(unit_name="test1", unit_group_name="group1")
     list_objects = [u, u1]
     exceltools.write_objects_to_excel(list_objects, "unit_demo.xlsx")
+    exceltools.write_objects_to_excel(list_objects, "unit_demo.csv")
