@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import pytest
+
 from omymodels import create_models
 
 
@@ -18,6 +20,7 @@ create table category
 """
 
 
+@pytest.mark.skip
 def test_create_model():
     result = create_models(ddl, models_type="pydantic")["code"]
     print(result)

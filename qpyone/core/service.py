@@ -9,6 +9,7 @@ from qpyone.builtins.dicttools import pick_value
 from qpyone.clients.http.client import BaseHttpClient
 from qpyone.clients.http.models import HttpLog
 from qpyone.clients.http.models import HttpRequest
+from qpyone.core.models import BaseDataModel
 
 
 class BaseRpcService:
@@ -18,6 +19,10 @@ class BaseRpcService:
         if base_url_input:
             self.base_url = base_url_input
         self.options = kwargs
+        self.endpoint = ""
+
+    def __build_path(self, path):
+        return self.end_point + "/" + path
 
     def _make_request_model(self, **kwargs) -> HttpRequest:
         request = HttpRequest(**kwargs)
@@ -39,3 +44,6 @@ class BaseRpcService:
     @classmethod
     def create(cls, invoker: BaseHttpClient = None, **kwargs):
         return cls(invoker, **kwargs)
+
+    def request_by_method(self, method_name: str, req: BaseDataModel, **kwargs):
+        return self.__dict__[method_name](req=req, **kwargs)

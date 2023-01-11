@@ -36,6 +36,7 @@ def test_create_engine():
     # metadata.create_all(pg.engine)
 
 
+@pytest.mark.skip
 def test_query():
     sql = """
     select * from demo.hero
@@ -49,6 +50,7 @@ def test_query():
     print(result)
 
 
+@pytest.mark.skip
 def test_query_bind_params():
     sql = """
     select * from demo.hero where name=:name

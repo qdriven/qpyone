@@ -2,9 +2,11 @@ from typing import Optional
 
 import datetime
 
-from pydantic import BaseModel
+from datetime import datetime
+
 from pydantic import Field
 from qpyone.builtins import jsontools as jt
+from qpyone.core.models import BaseDataModel
 
 from tests import TEST_BASE_PATH
 
@@ -33,25 +35,6 @@ def test_loads_list():
     """
     result = jt.loads(json_str)
     assert isinstance(result, list)
-
-
-class BaseDataModel(BaseModel):
-    class Config:
-        arbitrary_types_allowed = True
-        allow_population_by_field_name = True
-        use_enum_values = True
-
-    def to_json(self):
-        return self.json(by_alias=True, exclude_none=True)
-
-    def to_dict(self):
-        return self.dict(by_alias=True, exclude_none=True)
-
-
-from datetime import date
-from datetime import datetime
-from datetime import time
-from datetime import timedelta
 
 
 class DataTransformRule(BaseDataModel):
