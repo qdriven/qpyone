@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from typing import Optional
 
 import json
 
@@ -9,7 +8,7 @@ from dataclasses import dataclass
 from mitmproxy.http import HTTPFlow
 from qpyone.clients import DbClient
 from qpyone.clients import DbConfig
-from qpyone.core import configs
+from qpyone.config import configs
 from sqlmodel import Field
 from sqlmodel import SQLModel
 

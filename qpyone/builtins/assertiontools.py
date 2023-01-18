@@ -19,14 +19,12 @@ contextlib.__tracebackhide__ = (
     True  # monkey patch contextlib with clean py.test tracebacks
 )
 
-from typing import List
-
 
 if sys.version_info[0] == 3:
     str_types = (str,)
     xrange = range
     unicode = str
-    Iterable = collections.abc.Iterable
+    Iterable = collections.Iterable
 else:
     raise NotImplementedError("Python2 is not supported!")
 

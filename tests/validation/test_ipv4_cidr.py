@@ -1,8 +1,8 @@
 import pytest
 
-from qpyone.validation import ValidationFailure
-from qpyone.validation import ipv4_cidr
-from qpyone.validation import ipv6_cidr
+from qpyone.builtins.validation import ValidationFailure
+from qpyone.builtins.validation import ipv4_cidr
+from qpyone.builtins.validation import ipv6_cidr
 
 
 @pytest.mark.parametrize(

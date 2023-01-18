@@ -45,6 +45,7 @@ atlassian-python-api = "^3.32.1"
 pyexcel = "^0.7.0"
 pyexcel-xlsx = "^0.6.0"
 pyexcel-xlsxw = "^0.6.1"
+dependency-injector = "^4.41.0"
 
 
 [tool.poetry.dev-dependencies]

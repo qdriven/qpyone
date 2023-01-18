@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from typing import Dict
-from typing import Optional
 
 from pydantic import BaseModel
 

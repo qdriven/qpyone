@@ -1,4 +1,4 @@
-from qpyone.config import configs
+from qpyone.config.configs import configs as configs
 
 
 def test_configuration_loaded():

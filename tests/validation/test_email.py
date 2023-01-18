@@ -1,7 +1,7 @@
 import pytest
 
-from qpyone.validation import ValidationFailure
-from qpyone.validation import email
+from qpyone.builtins.validation import ValidationFailure
+from qpyone.builtins.validation import email
 
 
 @pytest.mark.parametrize(

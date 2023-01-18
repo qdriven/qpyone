@@ -1,14 +1,14 @@
 import pytest
 
-from qpyone.validation import ValidationFailure
-from qpyone.validation import amex
-from qpyone.validation import card_number
-from qpyone.validation import diners
-from qpyone.validation import discover
-from qpyone.validation import jcb
-from qpyone.validation import mastercard
-from qpyone.validation import unionpay
-from qpyone.validation import visa
+from qpyone.builtins.validation import ValidationFailure
+from qpyone.builtins.validation import amex
+from qpyone.builtins.validation import card_number
+from qpyone.builtins.validation import diners
+from qpyone.builtins.validation import discover
+from qpyone.builtins.validation import jcb
+from qpyone.builtins.validation import mastercard
+from qpyone.builtins.validation import unionpay
+from qpyone.builtins.validation import visa
 
 
 visa_cards = ["4242424242424242", "4000002760003184"]

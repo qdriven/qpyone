@@ -5,7 +5,7 @@ __all__ = (
     "es_doi",
 )
 
-from qpyone.validation import validator
+from qpyone.builtins.validation import validator
 
 
 def nif_nie_validation(doi, number_by_letter, special_cases):

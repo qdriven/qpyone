@@ -1,7 +1,7 @@
 import pytest
 
-from qpyone.validation import btc_address
-from qpyone.validation.utils import ValidationFailure
+from qpyone.builtins.validation import ValidationFailure
+from qpyone.builtins.validation import btc_address
 
 
 @pytest.mark.parametrize(

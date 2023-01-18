@@ -1,6 +1,6 @@
 import pytest
 
-from qpyone import validation
+from qpyone.builtins import validation
 
 
 @pytest.mark.parametrize("value", ["GB82WEST12345698765432", "NO9386011117947"])

@@ -1,7 +1,10 @@
 import pytest
 
-from qpyone.validation import ValidationFailure
-from qpyone.validation.i18n.es import *
+from qpyone.builtins.validation import ValidationFailure
+from qpyone.builtins.validation.i18n.es import es_cif
+from qpyone.builtins.validation.i18n.es import es_doi
+from qpyone.builtins.validation.i18n.es import es_nie
+from qpyone.builtins.validation.i18n.es import es_nif
 
 
 @pytest.mark.parametrize(

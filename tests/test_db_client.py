@@ -2,6 +2,8 @@
 # postgresql: postgresql: // scott: tiger @ localhost:5432 / mydatabase
 # jdbc:postgresql://localhost:5432/mydatabase?currentSchema=myschema
 # pip install psycopg2-binary
+import pytest
+
 from qpyone.clients.database.db_client import DbClient
 from qpyone.clients.database.models import DbConfig
 from qpyone.clients.database.utils import sql_result_to_model

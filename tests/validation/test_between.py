@@ -1,7 +1,7 @@
 import pytest
 
-from qpyone.validation import between
-from qpyone.validation.utils import ValidationFailure
+from qpyone.builtins.validation import ValidationFailure
+from qpyone.builtins.validation import between
 
 
 @pytest.mark.parametrize(

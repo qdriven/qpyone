@@ -1,7 +1,6 @@
 import pytest
 
-from qpyone import validation as validators
-from qpyone.validation import *
+from qpyone.builtins.validation import *
 
 
 @pytest.mark.parametrize(
