@@ -50,7 +50,7 @@ dependency-injector = "^4.41.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.2.0"
-pre-commit = "^2.21.0"
+pre-commit = "^3.0.0"
 bandit = "^1.7.4"
 safety = "^2.3.5"
 pylint = "^2.15.10"
