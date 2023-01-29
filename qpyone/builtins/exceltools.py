@@ -39,7 +39,10 @@ def read_as_objects(
     return objects
 
 
-def write_objects_to_excel(objects: list[BaseModel | dict | dict], excel_path: str):
+def write_objects_to_file(objects: list[BaseModel | dict | dict], excel_path: str):
+    """
+    write objects to excel or csv
+    """
     if isinstance(objects[0], dict) or isinstance(objects[0], dict):
         pyexcel.get_sheet(records=objects).save_as(excel_path)
     elif isinstance(objects[0], BaseModel):

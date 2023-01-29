@@ -46,6 +46,7 @@ pyexcel = "^0.7.0"
 pyexcel-xlsx = "^0.6.0"
 pyexcel-xlsxw = "^0.6.1"
 dependency-injector = "^4.41.0"
+jmespath = "^1.0.1"
 
 
 [tool.poetry.dev-dependencies]
