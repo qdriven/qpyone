@@ -1,4 +1,6 @@
 """Tests for hello function."""
+from typing import Optional
+
 from pydantic import Field
 from qpyone.builtins import exceltools
 from qpyone.core.models import BaseDataModel
@@ -7,14 +9,14 @@ from qpyone.core.models import BaseDataModel
 class UnitExcelModel(BaseDataModel):
     unit_group_name: str = Field("", alias="单位组名称")
     unit_name: str = Field("", alias="单位名")
-    unit_symbol: str = Field("", alias="单位符号")
-    unit_latex: str = Field("", alias="单位符号LaTex")
-    base_unit: bool = Field("", alias="基准单位")
-    factor: str = Field("", alias="换算系数")
+    unit_symbol: Optional[str] = Field("", alias="单位符号")
+    unit_latex: Optional[str] = Field("", alias="单位符号LaTex")
+    base_unit: Optional[bool] = Field("", alias="基准单位")
+    factor: Optional[str] = Field("", alias="换算系数")
 
 
 def test_load_objects_from_excel():
-    result = exceltools.read_as_objects("./unit.xlsx", UnitExcelModel)
+    result = exceltools.read_as_objects("./unit_demo.xlsx", UnitExcelModel)
     print(result)
     print(type(result))
 

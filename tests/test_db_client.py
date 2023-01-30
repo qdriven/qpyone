@@ -19,6 +19,7 @@ class Hero(SQLModel, table=True):
     age: int | None = None
 
 
+@pytest.mark.skip
 def test_create_engine():
     db_config = DbConfig(url="postgresql://postgres:changeit@localhost:7432/test_hub")
     pg = DbClient(config=db_config)

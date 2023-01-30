@@ -4,6 +4,21 @@ from typing import Any
 import json
 
 
+def merge_dicts(*dicts: dict) -> dict:
+    """依次合并多个字典。merge multiple dict one by one.
+
+    Examples::
+
+        offset_limit_schema = {'offset': Validation(...), 'limit': Validation(...)}
+        ...
+        schema = merge_dicts(offset_limit_schema, from_to_schema, payment_schema)
+    """
+    dict_merged = {}
+    for d in dicts:
+        dict_merged.update(d)
+    return dict_merged
+
+
 def pick_by_keys(base: dict[Any, Any], *keys: str) -> dict[Any, Any]:
     result = {}
     for key in keys:

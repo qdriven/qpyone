@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+import decimal
 import math
 import re
 import sys
@@ -571,3 +572,34 @@ def metric(value: float, unit: str = "", precision: int = 3) -> str:
         space = " "
 
     return f"{value_}{space}{ordinal_}{unit}"
+
+
+def normalize(value):
+    """将一个数右边的零给干掉。remove trailing zeros from number.
+
+    Examples::
+
+        normalize('80.00')
+        # '80'
+        normalize('12.30')
+        # '12.3'
+        normalize('6.66')
+        # '6.66'
+
+    :rtype: str
+    """
+    str_value = str(value)
+    return str_value.rstrip("0").rstrip(".") if "." in str_value else str_value
+
+
+def quantize(value, rounding=decimal.ROUND_HALF_UP):
+    """强制转换为两位小数类型。quantize value to two digits decimal.
+
+    Examples::
+
+        price_list = [(5.25, 3.33), (6.98, 3.14)]
+        sales_volume = sum(quantize(unit_price * amount) for unit_price, amount in price_list)
+
+    :rtype: decimal.Decimal
+    """
+    return decimal.Decimal(value).quantize(decimal.Decimal(".01"), rounding=rounding)

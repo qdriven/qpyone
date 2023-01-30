@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import pytest
+
 from qpyone.builtins import rendertools
 from qpyone.clients import DbClient
 from qpyone.clients import DbConfig
@@ -91,6 +93,7 @@ class {{table_name}}(SQLModel, table=True):
 """
 
 
+@pytest.mark.skip
 def test_db_model():
     db_config = DbConfig(url="postgresql://postgres:changeit@localhost:7432/test_hub")
     pg = DbClient(config=db_config)
