@@ -4,6 +4,9 @@ from typing import Any
 from urllib.parse import urlparse
 
 
+__all__ = ["replace_path_params", "normalize_url"]
+
+
 def replace_path_params(path: str, path_params: dict[str, Any] = None) -> str:
     parsed = urlparse(path)
     if parsed.netloc:

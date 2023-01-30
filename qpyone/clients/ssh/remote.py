@@ -6,6 +6,9 @@ import paramiko
 from loguru import logger
 
 
+__all__ = ["RemoteServe"]
+
+
 class RemoteServe:
     """远程服务器"""
 

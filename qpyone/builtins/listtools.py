@@ -2,6 +2,9 @@
 from typing import Any
 
 
+__all__ = ["flat"]
+
+
 def flat(nested_list: list[list[Any]]) -> list:
     result = []
     for list_item in nested_list:

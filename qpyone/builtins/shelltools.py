@@ -9,6 +9,8 @@ Most Shell Command could be replaced by:
 2. Path
 """
 
+__all__ = ["ShellResult", "wait_process_end", "shell"]
+
 
 class ShellResult:
     def __init__(self, return_code, stdout, stderr):

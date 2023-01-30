@@ -3,6 +3,8 @@ import random
 from faker import Faker
 
 
+__all__ = ["faker", "random_str", "random_unicode", "random_GBK2312"]
+
 faker = Faker(["en_US", "zh_CN"])
 
 
