@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import pytest
 
-from qpyone.builtins import rendertools
 from qpyone.clients import DbClient
 from qpyone.clients import DbConfig
 from qpyone.clients import database

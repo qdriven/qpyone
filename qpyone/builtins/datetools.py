@@ -11,14 +11,14 @@ from typing import Optional
 from typing import Tuple
 
 
-def tomorrow() -> datetime.datetime:
+def tomorrow() -> datetime:
     """获取昨天的时间"""
-    return datetime.datetime.now() + datetime.timedelta(days=1)
+    return datetime.now() + datetime.timedelta(days=1)
 
 
-def yesterday() -> datetime.datetime:
+def yesterday() -> datetime:
     """获取昨天的时间"""
-    return datetime.datetime.now() - datetime.timedelta(days=1)
+    return datetime.now() - datetime.timedelta(days=1)
 
 
 def get_date_by_timedelta(days=0, from_date=date.today()):
@@ -41,7 +41,7 @@ def expand_datetime(dt_str: str) -> datetime:
 def datetime_to_str(value, fmt="%Y-%m-%d %H:%M:%S"):
     """时间类型转换为字符串。datetime to string.
 
-    :type value: datetime.datetime
+    :type value: datetime
     :type fmt: str
     :rtype: str
     """
@@ -52,7 +52,7 @@ def datetime_combine(
     start_date: datetime.date,
     end_date: datetime.date = None,
     delta_days: Optional[int] = None,
-) -> Tuple[datetime.datetime, datetime.datetime]:
+) -> Tuple[datetime, datetime]:
     """获取一段日期的起止时间。get start/end datetime from date.
 
     Examples::
@@ -71,6 +71,6 @@ def datetime_combine(
             start_date, end_date = end_date, start_date
     end_date = end_date or start_date
     return (
-        datetime.datetime.combine(start_date, datetime.time.min),
-        datetime.datetime.combine(end_date, datetime.time.max),
+        datetime.combine(start_date, datetime.time.min),
+        datetime.combine(end_date, datetime.time.max),
     )
