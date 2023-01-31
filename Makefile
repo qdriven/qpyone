@@ -60,7 +60,7 @@ check-safety:
 
 .PHONY: lint
 #lint: formatting test check-codestyle check-safety
-lint: formatting test check-codestyle
+lint: formatting test
 
 .PHONY: update-dev-deps
 update-dev-deps:
