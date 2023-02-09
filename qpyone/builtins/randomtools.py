@@ -17,8 +17,7 @@ def random_GBK2312():
     head = random.randint(0xB0, 0xF7)
     body = random.randint(0xA1, 0xFE)
     val = f"{head:x} {body:x}"
-    str = bytes.fromhex(val).decode("gb2312")
-    return str
+    return bytes.fromhex(val).decode("gb2312")
 
 
 def random_str(length=4):

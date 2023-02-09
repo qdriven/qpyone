@@ -16,7 +16,7 @@ To activate your `virtualenv` run `poetry shell`.
 
 ## Codestyle
 
-After installation you may execute code formatting.
+After installation, you may execute code formatting.
 
 ```bash
 make codestyle

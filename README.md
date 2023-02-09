@@ -8,6 +8,10 @@
 ***qpyone*** stands, one python lib for QA.
 This lib integrates most useful libs for QA Daily tasks.
 
+## Modules
+1. **builtin**
+   - [] dicttool
+
 ## To Do
 
 - [] DI Implementation

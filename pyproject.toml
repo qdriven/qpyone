@@ -61,7 +61,6 @@ isort = { extras = ["colors"], version = "^5.11.4" }
 coverage = "^7.0.0"
 coverage-badge = "^1.1.0"
 pytest-cov = "^4.0.0"
-mypy = "^1.0"
 omymodels = "^0.13.0"
 mitmproxy = "^9.0.1"
 freezegun = "^1.2.2"
@@ -91,7 +90,6 @@ exclude = '''
 # https://github.com/timothycrosley/isort/
 py_version = 310
 line_length = 88
-
 known_typing = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
 sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 include_trailing_comma = true
