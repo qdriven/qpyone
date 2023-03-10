@@ -13,4 +13,4 @@
 - python 配置管理
 - python 数据格式处理
 - python 接口/数据库使用
-- python 
+- python 不同程序如何组合和组装
