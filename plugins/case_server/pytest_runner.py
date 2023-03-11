@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from typing import Optional
-
 import pytest
 
 from qpyone.core.models import BaseDataModel
