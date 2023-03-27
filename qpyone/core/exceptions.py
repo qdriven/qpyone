@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 
 
-class RunnerException(Exception):
+class RunnerException(GenericError):
     pass
 
 
-class TestCaseException(Exception):
+class TestCaseException(GenericError):
     pass
 
 
-class ClientException(Exception):
+class ClientException(GenericError):
     pass
 
 
-class DataExtractException(Exception):
+class DataExtractException(GenericError):
     pass

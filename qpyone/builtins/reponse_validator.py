@@ -4,6 +4,11 @@ from qpyone.clients.http.models import HttpLog
 from qpyone.validators.models import ExpectedResponse
 
 
+class ExpectedResponse(BaseModel):
+    status_code: int = 200
+    values: dict | None
+
+
 class ResponseValidation:
     def __init__(self, req_log: HttpLog):
         self.req_log = req_log

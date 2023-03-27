@@ -1,4 +1,1 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
-
-from .configs import configs
+from .base_config import settings

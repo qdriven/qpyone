@@ -9,7 +9,6 @@ from qpyone.builtins.dicttools import pick_value
 from qpyone.clients.http.client import BaseHttpClient
 from qpyone.clients.http.models import HttpLog
 from qpyone.clients.http.models import HttpRequest
-from qpyone.core.models import BaseDataModel
 
 
 class BaseRpcService:

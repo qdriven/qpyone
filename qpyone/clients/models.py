@@ -2,8 +2,6 @@
 # -*- coding:utf-8 -*-
 from typing import Any
 
-from qpyone.core.models import BaseDataModel
-
 
 class ClientRequest(BaseDataModel):
     type: str = "HTTP"

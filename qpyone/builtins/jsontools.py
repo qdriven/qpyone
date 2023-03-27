@@ -6,7 +6,10 @@ from typing import Any
 
 import json
 
+import pydantic
+
 from pydantic import BaseModel
+from qpyone.base.models import GenericDataModel
 
 
 def get(target_object: Any, key: str) -> Any | None:
@@ -44,7 +47,3 @@ def dumps(obj: dict | list, **kwargs) -> str:
     dump string as json string
     """
     return json.dumps(obj=obj, **kwargs)
-
-
-class WithToJson(BaseModel):
-    pass
