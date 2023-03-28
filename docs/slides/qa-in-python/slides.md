@@ -25,6 +25,7 @@ css: unocss
 
 # Python QA Revisited
 
+  QA re-learning python in a fluent way
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
     Press Space for next page <carbon:arrow-right class="inline"/>
@@ -33,5 +34,17 @@ css: unocss
 
 ---
 src: ./docs/all-about-json.md
+hide: false
+---
+
+---
+
+# JSON-DICT-Object-all most same
+<br>
+
+JSON-DICT-Object,如果从数据角度看,基本可以认为是一样的.
+
+---
+src: ./docs/json-dict-object.md
 hide: false
 ---
