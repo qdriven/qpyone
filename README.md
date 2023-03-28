@@ -11,15 +11,11 @@ This lib integrates most useful libs for QA Daily tasks.
 ## Modules
 1. **builtin**
    - [] dicttool
-
-## Rethink Python base libs as composer
-
-fluentqa-composer include:
-
-1. base cmd 
-2. injector: injector 
-3. config: base configuration
-
+2. Basic Model - Rethink Python base libs as composer
+Include:
+   1. base cmd 
+   2. injector: injector 
+   3. config: base configuration
 
 ## plugin model
 
@@ -77,3 +73,7 @@ fluentqa-composer include:
 ## Integrations
 
 - [X][atlassian-python-api]( https://github.com/atlassian-api/atlassian-python-api.git)
+
+## FastAPI Plugins
+
+- [slowapi](https://github.com/laurentS/slowapi)
