@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-
-from qpyone.core.models import BaseDataModel
+from qpyone.base import BaseDataModel
 
 
 class DbConfig(BaseDataModel):

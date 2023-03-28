@@ -10,9 +10,9 @@ from datetime import timedelta
 from enum import Enum
 from functools import total_ordering
 
-from .misc.i18n import _gettext as _
-from .misc.i18n import _ngettext
-from .misc.number import intcomma
+from .i18ntools import _gettext as _
+from .i18ntools import _ngettext
+from .numbertools import intcomma
 
 
 __all__ = [

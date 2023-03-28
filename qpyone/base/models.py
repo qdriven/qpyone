@@ -1,8 +1,10 @@
 from typing import TypeVar
+from typing import Union
 
 import re
 
 import inflection
+import pydantic
 
 from pydantic import BaseModel
 from pydantic.generics import GenericModel
@@ -51,4 +53,4 @@ def to_json(obj: Union[GenericDataModel, BaseDataModel, BaseModel]):
     if isinstance(obj, GenericDataModel) or isinstance(obj, BaseDataModel):
         return obj.to_json()
     else:
-        return obj.json(by_alias=by_alias, exclude_none=True)
+        return obj.json(by_alias=True, exclude_none=True)

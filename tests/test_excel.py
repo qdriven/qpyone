@@ -2,8 +2,8 @@
 from typing import Optional
 
 from pydantic import Field
+from qpyone.base import BaseDataModel
 from qpyone.builtins import exceltools
-from qpyone.core.models import BaseDataModel
 
 
 class UnitExcelModel(BaseDataModel):

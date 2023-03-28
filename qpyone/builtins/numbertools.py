@@ -12,12 +12,12 @@ import sys
 
 from fractions import Fraction
 
-from .i18n import _gettext as _
-from .i18n import _ngettext
-from .i18n import _ngettext_noop as NS_
-from .i18n import _pgettext as P_
-from .i18n import decimal_separator
-from .i18n import thousands_separator
+from qpyone.builtins.i18ntools import _gettext as _
+from qpyone.builtins.i18ntools import _ngettext
+from qpyone.builtins.i18ntools import _ngettext_noop as NS_
+from qpyone.builtins.i18ntools import _pgettext as P_
+from qpyone.builtins.i18ntools import decimal_separator
+from qpyone.builtins.i18ntools import thousands_separator
 
 
 if TYPE_CHECKING:

@@ -5,8 +5,8 @@ import datetime
 from datetime import datetime
 
 from pydantic import Field
+from qpyone.base import BaseDataModel
 from qpyone.builtins import jsontools as jt
-from qpyone.core.models import BaseDataModel
 
 from tests import TEST_BASE_PATH
 

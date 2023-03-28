@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 from mitmproxy.http import HTTPFlow
 from plugins.mitm.models import save_http_flow
-from qpyone.config.configs import configs
+from qpyone.config.base_config import settings
 
 
 def is_captured_url(url: str):
-    url_prefix = configs.mitm.recorded_url.split(",")
+    url_prefix = settings.mitm.recorded_url.split(",")
     for item in url_prefix:
         if len(item) == 0:
             continue
