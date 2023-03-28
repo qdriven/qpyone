@@ -41,11 +41,24 @@
 
 ## 有没有什么不同的JSON
 
+<div class="grid grid-cols-2 gap-x-8">
+
+<div>
 并不完全是key-value,键值对:
+
+##### json array
 
 ```json
 [1, 2, 3, 4, 5]
 ```
+</div>
+
+<div>
+
+##### 另一种JSON Array
+
+<br>
+
 ```json
 [
   {
@@ -58,6 +71,8 @@
   }
 ]
 ```
+
+</div></div>
 ---
 ## JSON小结下
 
