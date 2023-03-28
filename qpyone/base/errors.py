@@ -1,6 +1,8 @@
 from typing import Any
 from typing import Union
 
+from qpyone.loggers.loggers import logger
+
 
 DEFAULT_ERROR_MESSAGE = "Undefined remote error"
 

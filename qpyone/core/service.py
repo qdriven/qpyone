@@ -5,6 +5,7 @@ from typing import Any
 import functools
 
 from pydantic import BaseModel
+from qpyone.base import BaseDataModel
 from qpyone.builtins.dicttools import pick_value
 from qpyone.clients.http.client import BaseHttpClient
 from qpyone.clients.http.models import HttpLog
