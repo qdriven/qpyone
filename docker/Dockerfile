@@ -1,25 +1,22 @@
-FROM python:3.11-slim-buster
+FROM python:3.11-slim-bullseye
 
-ENV LANG=C.UTF-8 \
-  LC_ALL=C.UTF-8 \
-  PATH="${PATH}:/root/.poetry/bin"
+# Set environment variables.
+ENV PYTHONWRITEBYTECODE 1
+ENV PYTHONBUFFERED 1
 
-RUN apt-get update && \
-  apt-get install -y --no-install-recommends \
-  curl \
-  && rm -rf /var/lib/apt/lists/*
+# Set working directory.
+WORKDIR /code
 
-COPY pyproject.toml ./
+# Copy dependencies.
+COPY pyproject.toml /code/
 
-# Install Poetry
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | POETRY_HOME=/opt/poetry python && \
-    cd /usr/local/bin && \
-    ln -s /opt/poetry/bin/poetry && \
-    poetry config virtualenvs.create false
+# Install dependencies.
+RUN poetry install
 
-# Allow installing dev dependencies to run tests
-ARG INSTALL_DEV=false
-RUN bash -c "if [ $INSTALL_DEV == 'true' ] ; then poetry install --no-root ; else poetry install --no-root --no-dev ; fi"
+# Copy project.
+COPY . /code/
 
-CMD mkdir -p /app
-WORKDIR /app
+EXPOSE 5000
+
+ENTRYPOINT [ "gunicorn", "app.main:app", "--workers", "2", "--worker-class", \
+        "uvicorn.workers.UvicornWorker",  "-b", "0.0.0.0:5000" ]
