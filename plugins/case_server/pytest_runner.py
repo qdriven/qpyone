@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import pytest
 
-from qpyone.base import BaseDataModel
+from qpybase import BaseDataModel
 
 
 class RunCaseOption(BaseDataModel):
