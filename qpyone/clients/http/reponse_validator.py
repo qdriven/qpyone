@@ -1,7 +1,8 @@
-from qpyone.builtins.assertiontools import assert_that
-from qpyone.builtins.assertiontools import soft_assertions
 from qpyone.clients.http.models import HttpLog
 from qpyone.validators.models import ExpectedResponse
+
+from .assertiontools import assert_that
+from .assertiontools import soft_assertions
 
 
 class ExpectedResponse(BaseModel):

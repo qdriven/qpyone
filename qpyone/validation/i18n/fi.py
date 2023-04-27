@@ -1,6 +1,6 @@
 import re
 
-from qpyone.builtins.validation.utils import validator
+from qpyone.validation.utils import validator
 
 
 business_id_pattern = re.compile(r"^[0-9]{7}-[0-9]$")
