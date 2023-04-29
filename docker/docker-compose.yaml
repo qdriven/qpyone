@@ -1,0 +1,43 @@
+version: "3.9"
+services:
+  app:
+    restart: unless-stopped
+    env_file:
+      - .env
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      labels:
+        - fnano
+    volumes:
+        - .:/code
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        gunicorn app.main:app --workers 2 \
+        --worker-class uvicorn.workers.UvicornWorker -b 0.0.0.0:6969
+    ports:
+      - 6969:6969
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "$PORT:$PORT"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+    depends_on:
+      - app
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -1,7 +1,7 @@
 import pytest
 
-from qpyone.builtins.validation import Max
-from qpyone.builtins.validation import Min
+from qpyone.validation import Max
+from qpyone.validation import Min
 
 
 @pytest.mark.parametrize(

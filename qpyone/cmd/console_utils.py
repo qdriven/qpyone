@@ -4,7 +4,7 @@ from rich.table import Table
 
 
 def get_category_color(category):
-    COLORS = {
+    colors = {
         "Learn": "cyan2",
         "YouTube": "red",
         "Sports": "cyan",
@@ -15,8 +15,8 @@ def get_category_color(category):
         "Shopping": "green",
         "Personal": "magenta",
     }
-    if category in COLORS:
-        return COLORS[category]
+    if category in colors:
+        return colors[category]
     return "white"
 
 

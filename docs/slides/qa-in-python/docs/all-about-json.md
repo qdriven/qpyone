@@ -73,7 +73,9 @@
 ```
 
 </div></div>
+
 ---
+
 ## JSON小结下
 
 - 一种文本格式
@@ -335,3 +337,12 @@ root['students']:{'name': 'name', 'age': 18}
 ```
 
 如何进行封装可以自行考虑
+
+---
+
+### 关于操作JSON的小结
+
+- 使用自带json的load/loads/dump/dumps
+- 使用pydantic结构化和转换JSON
+- 使用dotty设置不同路径的JSON值
+- 使用DeepDiff比较JSON值的差异
