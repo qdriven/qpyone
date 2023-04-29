@@ -1,5 +1,4 @@
 name: build
-
 on: [push, pull_request]
 
 jobs:
@@ -33,5 +32,5 @@ jobs:
       run: |
         make lint
 
-    - name: Run Changelog CI
-      uses: saadmk11/changelog-ci@v1.1.1
+#    - name: Run Changelog CI
+#      uses: saadmk11/changelog-ci@v1.1.1
