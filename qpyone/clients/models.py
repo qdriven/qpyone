@@ -2,6 +2,8 @@
 # -*- coding:utf-8 -*-
 from typing import Any
 
+from qpybase import BaseDataModel
+
 
 class ClientRequest(BaseDataModel):
     type: str = "HTTP"

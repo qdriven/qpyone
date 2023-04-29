@@ -13,13 +13,13 @@ from abc import abstractmethod
 import httpx
 
 from httpx import Response
+from qpybase import BaseDataModel
 from qpyone.clients.http.errors import HttpRequestError
 from qpyone.clients.http.models import HttpLog
 from qpyone.clients.http.models import HttpRequest
 from qpyone.clients.http.models import HttpResponse
 from qpyone.clients.http.models import SyncAsync
 from qpyone.core import qpy_logger
-from qpyone.core.models import BaseDataModel
 
 
 class HttpClientOption(BaseDataModel):

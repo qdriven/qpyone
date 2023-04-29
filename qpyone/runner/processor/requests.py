@@ -1,4 +1,4 @@
-from qpyone.base import GenericDataModel
+from qpybase import GenericDataModel
 
 
 class Request(GenericDataModel):

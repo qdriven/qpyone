@@ -2,7 +2,6 @@ from typing import Any
 from typing import List
 from typing import Optional
 
-from composer.processor.db.database import Database
 from injector import inject
 
 

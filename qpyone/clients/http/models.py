@@ -10,7 +10,7 @@ from collections.abc import Awaitable
 
 from httpx import Response
 from pydantic import BaseModel
-from qpyone.builtins import webtools
+from qpybase.builtins import webtools
 
 
 T = TypeVar("T")
