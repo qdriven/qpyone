@@ -8,7 +8,7 @@ import inspect
 
 from abc import ABC
 
-from qpyone.base import GenericDataModel
+from qpybase import GenericDataModel
 from qpyone.runner.meta.meta_utils import create_args_class
 from qpyone.runner.meta.meta_utils import get_return_result_hint
 

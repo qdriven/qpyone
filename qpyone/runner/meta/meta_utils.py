@@ -6,7 +6,7 @@ import inspect
 import sys
 
 from pydantic.fields import Field
-from qpyone.base import GenericDataModel
+from qpybase import GenericDataModel
 
 
 def export_all(module_name: str, given_type: Type) -> List:
