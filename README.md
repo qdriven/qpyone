@@ -6,12 +6,15 @@
 ![coverage](./assets/images/coverage.svg)
 
 ***qpyone*** stands, one python lib for QA.
+
 This lib integrates most useful libs for QA Daily tasks.
 
 ## Modules
-1. **builtin**
-   - [] dicttool
-2. Basic Model - Rethink Python base libs as composer
+
+1. [**builtin**]basic tools()
+2. [structs]json,class,dict, csv,excel toolkits
+3. [fluentqa-dao]() database,repository model
+3. Basic Model - Rethink Python base libs as composer
 Include:
    1. base cmd 
    2. injector: injector 
