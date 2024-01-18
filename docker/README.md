@@ -1,4 +1,4 @@
-# Docker for fluentqa-pyutils
+# Docker for qpyone
 
 ## Installation
 
