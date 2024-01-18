@@ -5,16 +5,16 @@ ENV PYTHONWRITEBYTECODE 1
 ENV PYTHONBUFFERED 1
 
 # Set working directory.
-WORKDIR /code
+WORKDIR /app
 
 # Copy dependencies.
-COPY pyproject.toml /code/
+COPY pyproject.toml /app/
 
 # Install dependencies.
 RUN poetry install
 
 # Copy project.
-COPY . /code/
+COPY . /app/
 
 EXPOSE 5000
 
