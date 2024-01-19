@@ -8,3 +8,8 @@
 ***qpyone*** stands, one python lib for QA.
 
 This lib integrates most useful libs for QA Daily tasks.
+
+
+## References
+
+- [fastapi-mvc](https://github.com/fastapi-mvc/fastapi-mvc/)

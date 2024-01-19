@@ -1,0 +1,5 @@
+name: qpyone
+channels:
+ - defaults
+dependencies:
+- python=3.11
