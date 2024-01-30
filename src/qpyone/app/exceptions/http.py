@@ -1,9 +1,16 @@
 """Application implementation - custom FastAPI HTTP exception with handler."""
 from typing import Any, Optional, Dict
 
-from fastapi import Request
+from fastapi import Request, HTTPException
 from fastapi.responses import JSONResponse
+from starlette.status import HTTP_500_INTERNAL_SERVER_ERROR
 
+
+class ServerHTTPException(HTTPException):
+    def __init__(self, error: str = None):
+        super(ServerHTTPException, self).__init__(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR, detail=error
+        )
 
 class HTTPException(Exception):
     """Define custom HTTPException class definition.
@@ -78,4 +85,4 @@ async def http_exception_handler(
         status_code=exception.status_code,
         content=exception.content,
         headers=exception.headers,
-    )v
+    )

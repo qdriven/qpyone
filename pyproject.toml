@@ -37,6 +37,7 @@ qpybase = { path = "../fluentqa-pybase", develop = true }
 qpydao = { path = "../fluentqa-pdao", develop = true }
 psycopg2-binary = "^2.9.9"
 redis = "^5.0.1"
+babel = "^2.14.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.4"

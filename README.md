@@ -12,4 +12,5 @@ This lib integrates most useful libs for QA Daily tasks.
 
 ## References
 
+- [fastapi-admin](https://github.com/fastapi-admin/fastapi-admin.git)
 - [fastapi-mvc](https://github.com/fastapi-mvc/fastapi-mvc/)

@@ -1,10 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
 
-from qpyone.app.di.autowire import Autowirer
-from tests.example.controllers import *
-from tests.example.domain import Foo, Bar
-from tests.example.services import FooPrinter
+from exmples.simple.controllers import controller1, controller2, controller3
+from exmples.simple.domain import Foo, Bar
+from exmples.simple.services import FooPrinter
+from qpyone.app.composer.autowire import Autowirer
 
 aw = Autowirer()
 
