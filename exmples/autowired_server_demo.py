@@ -4,9 +4,9 @@ from fastapi import FastAPI
 from exmples.simple.controllers import controller1, controller2, controller3
 from exmples.simple.domain import Foo, Bar
 from exmples.simple.services import FooPrinter
-from qpyone.app.composer.autowire import Autowirer
+from qpyone.app.composer.autowire import AutoWirer
 
-aw = Autowirer()
+aw = AutoWirer()
 
 
 @aw.register

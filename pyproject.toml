@@ -38,6 +38,10 @@ qpydao = { path = "../fluentqa-pdao", develop = true }
 psycopg2-binary = "^2.9.9"
 redis = "^5.0.1"
 babel = "^2.14.0"
+portkey-ai = "^1.1.5"
+openai = "^1.10.0"
+nest-asyncio = "^1.6.0"
+aiohttp = "^3.9.3"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.4"

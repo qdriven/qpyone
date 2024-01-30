@@ -5,7 +5,7 @@ from types import FunctionType
 from fastapi import Depends
 
 
-class Autowirer:
+class AutoWirer:
     def __init__(self, registry_factory: typing.Callable = dict):
         self._registry = registry_factory()
 
