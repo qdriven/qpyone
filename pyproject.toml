@@ -12,7 +12,7 @@ authors = ["fluentqa <hello@fluentqa.xyz>"]
 repository = "https://github.com/fluentqa/qpyone"
 homepage = "https://github.com/fluentqa/qpyone"
 packages = [
-    { include = "qpyone",from="src" },
+  { include = "qpyone", from = "src" },
 ]
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
@@ -25,9 +25,7 @@ classifiers = [#! Update me
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
   "Topic :: Software Development :: Libraries :: Python Modules",
-  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
 ]
 
 [tool.poetry.dependencies]
@@ -42,6 +40,10 @@ portkey-ai = "^1.1.5"
 openai = "^1.10.0"
 nest-asyncio = "^1.6.0"
 aiohttp = "^3.9.3"
+curl-cffi = "^0.5.10"
+selenium = "^4.17.2"
+browser-cookie3 = "^0.19.1"
+pyexecjs = "^1.5.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.4"
@@ -58,7 +60,7 @@ pytest-cov = "^4.0.0"
 omymodels = "^0.13.0"
 freezegun = "^1.2.2"
 inflection = "^0.5.1"
-qpyhelper =  { path = "../fluentqa-helper", develop = true }
+qpyhelper = { path = "../fluentqa-helper", develop = true }
 
 [tool.black]
 # https://github.com/psf/black

@@ -7,7 +7,6 @@ from socket import AF_INET
 
 import aiohttp
 
-
 SIZE_POOL_AIOHTTP = 100
 
 
