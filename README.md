@@ -5,9 +5,12 @@
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-310/)
 ![coverage](./assets/images/coverage.svg)
 
-***qpyone*** stands, one python lib for QA.
+***qpyone*** stands, one python project for QA to create different applications.
+A boilerplate fastapi project with different kinds of spells
 
-This lib integrates most useful libs for QA Daily tasks.
+## Project Overview
+
+
 
 
 ## References

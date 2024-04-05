@@ -1,6 +1,6 @@
 import os
 
-from qpyone.constants import get_base_dir, BASE_DIR
+from backup.qpyone.constants import get_base_dir, BASE_DIR
 
 
 def test_get_base_dir():
