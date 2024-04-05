@@ -31,6 +31,7 @@ codestyle:
 # 	poetry run pyupgrade --exit-zero-even-if-changed --py310-plus **/*.py
 	poetry run isort --settings-path pyproject.toml ./
 	poetry run black --config pyproject.toml ./
+	poetry run autoflake --remove-all-unused-imports --recursive --remove-unused-variables --in-place app --exclude=__init__.py
 
 .PHONY: formatting
 formatting: codestyle
