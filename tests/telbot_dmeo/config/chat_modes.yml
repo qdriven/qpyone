@@ -1,0 +1,10 @@
+auto:
+  name: 🤖 Auto
+  welcome_message: 🤖 Hi, I'm <b>ChatGPT</b>. What would you like to create?
+  parse_mode: html
+
+
+manual:
+  name: 👩🏼‍💻 Manual
+  welcome_message: 👩🏼‍💻 What would you like to create?
+  parse_mode: html

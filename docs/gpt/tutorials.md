@@ -11,3 +11,9 @@
 - https://github.com/Wjhtkj/aiwechat-vercel
 - https://chatgemini.wjhtkjwz.eu.org/#/
 - https://linux.do/t/topic/39924
+- https://www.coze.com/docs/welcome.html
+
+## Workflow 
+
+- https://github.com/Skyvern-AI/Skyvern
+- https://github.com/Automation-Test-Starter
