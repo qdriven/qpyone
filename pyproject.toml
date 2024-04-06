@@ -29,6 +29,9 @@ classifiers = [#! Update me
 
 [tool.poetry.dependencies]
 python = ">=3.10"
+fastapi = "^0.110.1"
+uvicorn = "^0.29.0"
+outlines = "^0.0.37"
 
 
 [tool.poetry.group.test.dependencies]
@@ -106,3 +109,21 @@ ignore = [
 [tool.ruff.lint.pyupgrade]
 # Preserve types, even if a file imports `from __future__ import annotations`.
 keep-runtime-typing = true
+
+
+[[tool.poetry.source]]
+name = "ali"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "tencent"
+url = "https://mirrors.cloud.tencent.com/pypi/simple/"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+priority = "default"
