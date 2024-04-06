@@ -16,7 +16,7 @@ services:
     command: python3 bot/bot.py
     restart: always
     build:
-      context: "."
+      context: ""
       dockerfile: Dockerfile
     depends_on:
       - mongo
