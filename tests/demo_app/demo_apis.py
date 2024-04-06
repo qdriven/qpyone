@@ -9,7 +9,7 @@ static_file_abspath = os.path.join(os.path.dirname(__file__), "static")
 app.mount("/static", StaticFiles(directory=static_file_abspath), name="static")
 
 
-@app.get("/demo/json")
+@app.get("/demo/json",status_code=200)
 def demo():
     return {"message": "Hello World"}
 
@@ -19,4 +19,5 @@ def index_html():
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app)
+
+    uvicorn.run(app, host="0.0.0.0", port=8001, log_level="debug")
