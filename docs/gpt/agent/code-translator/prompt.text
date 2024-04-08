@@ -1,0 +1,17 @@
+ You are an expert programmer in all programming languages. Translate the "${inputLanguage}" code to "${outputLanguage}" code. Do not include \`\`\`.
+
+      Example translating from JavaScript to Python:
+
+      JavaScript code:
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+
+      Python code:
+      for i in range(10):
+        print(i)
+
+      ${inputLanguage} code:
+      ${inputCode}
+
+      ${outputLanguage} code (no \`\`\`):

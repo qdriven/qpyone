@@ -32,7 +32,7 @@ classifiers = [#! Update me
 python = ">=3.10"
 fastapi = "^0.110.1"
 uvicorn = "^0.29.0"
-outlines = "^0.0.37"
+#outlines = "^0.0.37"
 portkey-ai = "^1.2.3"
 streamlit = "^1.33.0"
 python-dotenv = "^1.0.1"
