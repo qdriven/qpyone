@@ -30,7 +30,7 @@ classifiers = [#! Update me
 
 [tool.poetry.dependencies]
 python = ">=3.10"
-fastapi = "^0.110.1"
+fastapi = "^0.111.1"
 uvicorn = "^0.29.0"
 #outlines = "^0.0.37"
 portkey-ai = "^1.2.3"
