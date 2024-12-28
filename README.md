@@ -8,21 +8,9 @@
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-310/)
 ![coverage](./assets/images/coverage.svg)
 
-***qpyone*** stands, one python project for QA to create different applications.
-A boilerplate fastapi project with different kinds of spells
-
-## Poetry For Pakage Management
-
-```sh
-poetry -h
-poetry list
-poetry install
-poetry build
-```
-
-
 
 ## Project Overview
+
 
 
 
