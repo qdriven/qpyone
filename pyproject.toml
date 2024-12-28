@@ -30,7 +30,7 @@ default-groups = ["dev"]
 qpyci = { git = "https://github.com/fluent-qa/qpyci.git", rev = "main" }
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/qpyapp"]
+packages = ["src/qpyone"]
 
 [tool.pyright]
 typeCheckingMode = "strict"
@@ -55,12 +55,12 @@ dev = [
 [tool.ruff]
 line-length = 120
 target-version = "py39"
-include = ["qpyapp/**/*.py", "tests/**/*.py", "docs/**/*.py"]
+include = ["qpyone/**/*.py", "tests/**/*.py", "docs/**/*.py"]
 
 [tool.ruff.lint]
 extend-select = ["Q", "RUF100", "C90", "UP", "I", "D"]
 flake8-quotes = { inline-quotes = "single", multiline-quotes = "double" }
-isort = { combine-as-imports = true, known-first-party = ["qpyconf"] }
+isort = { combine-as-imports = true, known-first-party = ["qpyone"] }
 mccabe = { max-complexity = 15 }
 ignore = [
     "D100", # ignore missing docstring in module
@@ -81,7 +81,7 @@ quote-style = "single"
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = ["D"]
 "docs/**/*.py" = ["D"]
-"src/qpyconf/**/*.py" = ["D101", "D103"]
+"src/qpyone/**/*.py" = ["D101", "D103"]
 
 
 [tool.pytest.ini_options]
@@ -96,7 +96,7 @@ addopts = [
     "--durations",
     "0",
     "--cov",
-    "qpyconf",
+    "qpyone",
 ]
 log_cli = true
 log_cli_level = "info"
